@@ -6,15 +6,15 @@ Algumas análises de dados usando bases de dados reais ou do Kaggle. Aqui també
 Avaliações de Ramen:  https://datastudio.google.com/s/iIH-z-u8TB4
 
 ## Projeto Conversão de clientes
-O lançamento de um novo produto inovador que irá ajudar a população a ter acesso a serviços bancários através de smartphones está chegando. O objetivo é converter 1.000 clientes nas cidades mais desbancarizadas do Brasil. Ações para identificar as cidades que devemos realizar a nossa campanha:
+O lançamento de um novo produto inovador que irá ajudar a população a ter acesso a serviços bancários através de smartphones está chegando. O objetivo é converter 1.000 clientes nas cidades mais desbancarizadas do Brasil. Ações para identificar as cidades para a campanha:
 
 1) Classificar as cidades brasileira pelo nível de bancarização.
 2) Estimar o número de clientes convertidos em cada cidade.
 
 A base de dados final deverá conter:
 
-- Nome da Cidade;
-- Estado;
+- Nome da Cidade
+- Estado
 - População
 - Nível de bancarização
 - Clientes Convertidos
@@ -22,6 +22,7 @@ A base de dados final deverá conter:
 ## Roteiro da análise conversão de clientes
 
 Bancos de dados utilizados:
+
 - POSTOS: Banco de dados do número de postos de atendimento.
 - PAE: Banco de dados do número de postos de atendimento eletrônico.
 - AGENCIAS: Banco de dados do número de agências.
