@@ -1,5 +1,5 @@
 # Análise de dados
-Algumas análises de dados usando bases de dados reais ou do Kaggle. Aqui também teremos dashboards criados com o Google Data Studio.
+Algumas análises de dados usando bases de dados reais ou do Kaggle. Aqui também teremos dashboards criados com o Google Data Studio, as análises são feitas no R.
 
 ## Dashboard Avaliações de Ramen
 
