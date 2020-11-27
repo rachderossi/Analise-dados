@@ -48,4 +48,4 @@ O conjunto de dados contém características sociodemográficas e firmográficas
 - Nesse projeto é feito o cálculo RFM para poder entender como os clientes devem ser classificados
 - Após é feito um modelo preditivo de classificação usando o algoritmo de Naive Bayes
 
-Segmentação de clientes: https://datastudio.google.com/s/kNhlueV5Abk
+Segmentação de clientes: https://datastudio.google.com/s/qboeT6fS9rE
