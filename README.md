@@ -1,5 +1,5 @@
 # Data Analysis
-Some data analysis using real or Kaggle databases. Here we will also have dashboards created with Google Data Studio, the analyzes are made in R.
+Some data analysis using real or Kaggle databases. Here we will also have dashboards created with Google Data Studio, the analysis are made in R.
 
 ## Dashboard Ramen Ratings
 Ramen Ratings:  https://datastudio.google.com/s/iIH-z-u8TB4
