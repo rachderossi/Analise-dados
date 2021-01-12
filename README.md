@@ -1,7 +1,7 @@
 # Data Analysis
 Some data analysis using real or Kaggle databases. Here we will also have dashboards created with Google Data Studio, the analyzes are made in R.
 
-## Dashboard Avaliações de Ramen
+## Dashboard Ramen Ratings
 Ramen Ratings:  https://datastudio.google.com/s/iIH-z-u8TB4
 
 ## Project Inbound Marketing
@@ -20,7 +20,7 @@ The final database should contain:
 - Level of banking
 - Converted Customers
 
-## Inbound Marketing analysis roadmap
+## Inbound Marketing Analysis Roadmap
 
 Databases used:
 
