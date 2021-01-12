@@ -1,51 +1,50 @@
-# Análise de dados
-Algumas análises de dados usando bases de dados reais ou do Kaggle. Aqui também teremos dashboards criados com o Google Data Studio, as análises são feitas no R.
+# Data Analysis
+Some data analysis using real or Kaggle databases. Here we will also have dashboards created with Google Data Studio, the analyzes are made in R.
 
 ## Dashboard Avaliações de Ramen
+Ramen Ratings:  https://datastudio.google.com/s/iIH-z-u8TB4
 
-Avaliações de Ramen:  https://datastudio.google.com/s/iIH-z-u8TB4
+## Project Inbound Marketing
+The launch of a new innovative product that will help the population to access banking services through smartphones is coming. The goal is to convert 1,000 customers in the most unbanked cities in Brazil.
 
-## Projeto Conversão de clientes
-O lançamento de um novo produto inovador que irá ajudar a população a ter acesso a serviços bancários através de smartphones está chegando. O objetivo é converter 1.000 clientes nas cidades mais desbancarizadas do Brasil. 
+Actions to identify the cities for the campaign:
 
-Ações para identificar as cidades para a campanha:
+1) Classify Brazilian cities by the level of banking.
+2) Estimate the number of customers converted in each city.
 
-1) Classificar as cidades brasileira pelo nível de bancarização.
-2) Estimar o número de clientes convertidos em cada cidade.
+The final database should contain:
 
-A base de dados final deverá conter:
+- Name of the city
+- State
+- Population
+- Level of banking
+- Converted Customers
 
-- Nome da Cidade
-- Estado
-- População
-- Nível de bancarização
-- Clientes Convertidos
+## Inbound Marketing analysis roadmap
 
-## Roteiro da análise conversão de clientes
+Databases used:
 
-Bancos de dados utilizados:
+- STATIONS: Database of the number of service stations.
+- PAE: Database of the number of electronic service stations.
+- AGENCIES: Database of the number of branches.
+- pop: Database of population by municipality.
+- freq_municipio: Database of the sum of Number of branches + Number of Service Points + Number of Electronic Service Points by municipality.
+- plano_bancarizacao: Database with bankarisation level, IDHM and number of postpaid per municipality.
+- IDHM: Database with the IDHM of each municipality.
+- final delivery: final database with the name of the city, state, population, banking level and converted customers.
 
-- POSTOS: Banco de dados do número de postos de atendimento.
-- PAE: Banco de dados do número de postos de atendimento eletrônico.
-- AGENCIAS: Banco de dados do número de agências.
-- pop: Banco de dados da população por município.
-- freq_municipio: Banco de dados da soma de Número de agências + Número de Postos de Atendimento + Número Postos de Atendimento eletrônico por município.
-- nível_bancarizacao: Banco de dados com o nível de bancarização, IDHM e número de pós pagos por município.
-- IDHM: Banco de dados com o IDHM de cada município.
-- entrega.final: Banco de dados final com o nome da cidade, Estado, população, nível de bancarização e clientes convertidos.
+1°) I created a file in R called join_table, where I joined the POSTOS, PAE, AGENCIES databases grouped by municipality to have in a single table the sum of the number of branches + number of service points + number of electronic service points.
 
-1°) Criei um arquivo no R chamado junta_tabela, onde juntei as bases de dados POSTOS, PAE, AGÊNCIAS agrupados por município para ter em uma só tabela da soma do Número de agências + Número de Postos de Atendimento + Número Postos de Atendimento eletrônico.
+2°) I created another file in R called bank_level, where I joined the freq_municipio, pop and IDHM databases grouped by municipality. Before doing the grouping I had to put all the municipalities in capital letters and without accents, because as the bases came from different places I had to standardize everything. After grouping I created a new variable called bankarization level and then a table with the variables: municipality, state, population, bankarization and IDHM. Finally I selected the 1000 most unbanked cities and ordered them in ascending order.
 
-2°) Criei outro arquivo no R chamado nivel_bancarizacao, onde juntei as bases de dados freq._municipio, pop e IDHM agrupadas por município. Antes de fazer o agrupamento precisei colocar todos os municípios em letra maiúscula e sem acentos, pois como as bases vieram de locais diferentes precisei padronizar tudo. Após o agrupamento criei uma nova variável chamada de nível bancarização e então uma tabela com as variáveis: município, estado, população, bancarização e IDHM. Por último selecionei as 1000 cidades mais desbancarizadas e ordenei em ordem crescente.
+3°) The last file in R called prob_inbound uses the table bank_level which contains all the necessary variables to know the probability of conversion. After I created the state teledensity variables for postpaid cell phones, municipal population adjustment coefficient and conversion probability (in percentage). Finally, I created the variable of interest, which is the number of converted customers, creating a table with: municipality, state, population, banking level and converted customers. The Excel table called delivery.final is the one that contains the list with the minimum number of cities necessary to achieve the objective with the information for each city.
 
-3°) O último arquivo do R chamado prob_conversao utiliza a tabela nível_bancarizacao que contem todas as variáveis necessárias para saber a probabilidade de conversão. Após criei as variáveis teledensidade estadual de celulares pós pagos, coeficiente de ajuste populacional municipal e probabilidade de conversão (em porcentagem). Por último criei a variável de interesse que é o número de clientes convertidos, criando uma tabela com: município, Estado, população, nível bancarização e clientes convertidos. A tabela do Excel chamada entrega.final é a que contém a lista com o número mínimo de cidades necessárias para atingir o objetivo com as informações de cada cidade.
+## Project Customer Segmentation
+The objective of the team is to build a predictive model that will produce the highest profit for the next direct marketing campaign, scheduled for the next month. The new campaign, sixth, aims at selling a new gadget to the Customer Database. To build the model, a pilot campaign involving 2.240 customers was carried out. The customers were selected at random and contacted by phone regarding the acquisition of the gadget. During the following months, customers who bought the offer were properly labeled. The total cost of the sample campaign was 6.720MU and the revenue generated by the customers who accepted the offer was 3.674MU. Globally the campaign had a profit of 3.046MU. The success rate of the campaign was 15%. The objective is of the team is to devel op a model that predicts customer behavior and to apply it to the rest of the customer base. Hopefully, the model will allow the company to cherry pick the customers that are most likely to purchase the offer while leaving out the nonrespondents, making t he next campaign highly profitable. Moreover, other than maximizing the profit of the campaign, the CMO is interested in understanding to study the characteristic features of those customers who are willing to buy the gadget.
 
-## Projeto Segmentação de clientes
-O objetivo da equipe é construir um modelo preditivo que irá produzir o maior lucro para o próxima campanha de marketing direto, prevista para o próximo mês. A nova campanha, visa vender um novo gadget para o banco de dados do cliente. Para construir o modelo, uma campanha piloto envolvendo 2.240 clientes foi realizada. Os clientes foram selecionados aleatoriamente e contatados por telefone sobre a aquisição do gadget. Durante os meses seguintes, os clientes que compraram o oferta foram devidamente rotuladas. A taxa de sucesso da campanha foi de 15%. O objetivo da equipe é desenvolver um modelo que preveja o comportamento do cliente e o aplique ao restante da base de clientes. Esperançosamente, o modelo permitirá que a empresa escolha os clientes com maior probabilidade de comprar a oferta, deixando de fora os não respondentes, tornando a próxima campanha altamente rentável. Além disso, além de maximizar o lucro da campanha, o CMO está interessado em compreensão para estudar as características dos clientes que estão dispostos a comprar o gadget.
+The data set conta ins sociodemographic and firmographic features about 2.240 customers who were contacted. Additionally, it contains a flag for those customers who responded the campaign, by buying the product.
 
-O conjunto de dados contém características sociodemográficas e firmográficas sobre 2.240 clientes que foram contatados. Além disso, ele contém uma bandeira para os clientes que responderam à campanha, comprando o produto.
+- In this project, the RFM calculation is made in order to understand how customers should be classified.
+- Afterwards a predictive classification model is made using the Naive Bayes algorithm.
 
-- Nesse projeto é feito o cálculo RFM para poder entender como os clientes devem ser classificados
-- Após é feito um modelo preditivo de classificação usando o algoritmo de Naive Bayes
-
-Segmentação de clientes: https://datastudio.google.com/s/qboeT6fS9rE
+Customer Segmentation: https://datastudio.google.com/s/qboeT6fS9rE
