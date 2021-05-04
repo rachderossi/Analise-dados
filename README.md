@@ -1,8 +1,4 @@
 # Data Analysis
-Some data analysis using real or Kaggle databases. Here we will also have dashboards created with Google Data Studio, the analysis are made in R.
-
-## Dashboard Ramen Ratings
-Ramen Ratings:  https://datastudio.google.com/s/iIH-z-u8TB4
 
 ## Project Inbound Marketing
 The launch of a new innovative product that will help the population to access banking services through smartphones is coming. The goal is to convert 1,000 customers in the most unbanked cities in Brazil.
