@@ -44,3 +44,6 @@ In this project, the RFM calculation is made in order to understand how customer
 Afterwards a predictive classification model is made using the Naive Bayes algorithm.
 
 Customer Segmentation: https://datastudio.google.com/s/qboeT6fS9rE
+
+## How to create a percentage plot with ggplot2
+Check out the "percentage plot" file with the steps to create your own percentage plot in R!
