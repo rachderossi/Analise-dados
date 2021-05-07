@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 
 library(readr)
 library(sqldf)
-library(ggplot2)
 library(psych)
 library(tidyverse)
 library(tidyr)
