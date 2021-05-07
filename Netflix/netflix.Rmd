@@ -1,0 +1,111 @@
+---
+title: "Netflix dataset"
+author: "Raquel Rossi"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(readr)
+library(sqldf)
+library(ggplot2)
+library(psych)
+library(tidyverse)
+library(tidyr)
+```
+
+
+```{r}
+netflix <- read_csv("C:/Users/RaquelRossi/Downloads/SQL/netflix_titles.csv")
+```
+
+
+```{r}
+summary(netflix)
+describe(netflix)
+```
+
+```{r}
+map(netflix, ~sum(is.na(.)))
+```
+
+```{r}
+netflix[is.na(netflix$rating),]
+```
+
+```{r}
+netflix$rating[68] <- 'TV-PG'
+netflix$rating[2360] <- 'TV-14'
+netflix$rating[3661] <- 'TV-MA'
+netflix$rating[3739] <- 'TV-MA'
+netflix$rating[3737] <- 'NR'
+netflix$rating[3738] <- 'TV-MA'
+netflix$rating[4324] <- 'TV-MA' 
+```
+
+```{r}
+netflix$director <- NULL
+netflix$cast <- NULL
+
+netflix <-subset(netflix, (!is.na(netflix[,5]) & !is.na(netflix[,4])))
+```
+
+```{r}
+sqldf('SELECT COUNT(DISTINCT country) FROM netflix')
+```
+
+```{r}
+netflix <- separate(netflix, country, into= " ", sep= ",")
+colnames(netflix)[4] <- "country"
+```
+
+```{r}
+sqldf('SELECT COUNT (DISTINCT country) FROM netflix')
+```
+
+```{r}
+map(netflix, ~sum(is.na(.)))
+```
+
+```{r}
+sapply(netflix, class)
+```
+
+```{r}
+netflix <- separate(netflix, date_added, into= " ", sep= ",")
+colnames(netflix)[5] <- "date_added"
+netflix <- separate(netflix, date_added, into= " ", sep= " ")
+colnames(netflix)[5] <- "date_added"
+```
+
+```{r}
+table(netflix$rating)
+
+netflix$rating[netflix$rating == "TV-PG"] <- 'Older Kids'
+netflix$rating[netflix$rating == "TV-MA"] <- 'Adults'
+netflix$rating[netflix$rating == "TV-Y7-FV"] <- 'Older Kids'
+netflix$rating[netflix$rating == "TV-Y7"] <- 'Older Kids'
+netflix$rating[netflix$rating == "TV-14"] <- 'Teens'
+netflix$rating[netflix$rating == "R"] <- 'Adults'
+netflix$rating[netflix$rating == "TV-Y"] <- 'Kids'
+netflix$rating[netflix$rating == "NR"] <- 'Adults'
+netflix$rating[netflix$rating == "PG-13"] <- 'Teens'
+netflix$rating[netflix$rating == "TV-G"] <- 'Kids'
+netflix$rating[netflix$rating == "PG"] <- 'Older Kids'
+netflix$rating[netflix$rating == "G"] <- 'Kids'
+netflix$rating[netflix$rating == "UR"] <- 'Adults'
+netflix$rating[netflix$rating == "NC-17"] <- 'Adults'
+```
+
+```{r}
+write.csv(netflix,"C:/Users/RaquelRossi/Downloads/SQL/netflix.csv", row.names = FALSE)
+```
