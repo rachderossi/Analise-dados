@@ -52,3 +52,25 @@ Check out the "percentage plot" file with the steps to create your own percentag
 This dataset consists of tv shows and movies available on Netflix as of 2019. The dataset is collected from Flixable which is a third-party Netflix search engine.
 
 In 2018, they released an interesting report which shows that the number of TV shows on Netflix has nearly tripled since 2010. The streaming service’s number of movies has decreased by more than 2,000 titles since 2010, while its number of TV shows has nearly tripled. It will be interesting to explore what all other insights can be obtained from the same dataset.
+
+## Geographically Weighted Logistic Regression in Credit Risk Analysis
+
+The data set will be from a chain of pharmacies that offers a credit card to customers from all the State of Rio Grande do Sul in Brazil, the data set contains a sample of 11681 customers . Initially, 16 variables were considered:
+Sex: female or male
+Age: age in years
+Marital status: married, single, divorced, widowed, etc
+Education: level of education
+Income: income amount (R$)
+Type of income: declared or proven income
+Occupation
+Type of occupation: employed, self-employed, etc
+Residential zip code: zip code of the place where you live
+Commercial zip code: zip code of the place where you work
+Working: how long have you been working (months)
+Credit: do you have credit in other establishments?
+Type of residence: own, rented, assigned or with parents
+Birth city
+Children: do you have any children?
+Support: do you pay child support?
+
+Comparison between Logistic Regression and Geographically Weighted Logistic Regression
