@@ -53,6 +53,9 @@ This dataset consists of tv shows and movies available on Netflix as of 2019. Th
 
 In 2018, they released an interesting report which shows that the number of TV shows on Netflix has nearly tripled since 2010. The streaming service’s number of movies has decreased by more than 2,000 titles since 2010, while its number of TV shows has nearly tripled. It will be interesting to explore what all other insights can be obtained from the same dataset.
 
+## Interactive barplot with Shiny
+Check out the "barplot" file with the steps to create your own barplot using Shiny.
+
 ## Geographically Weighted Logistic Regression in Credit Risk Analysis
 
 The data set will be from a chain of pharmacies that offers a credit card to customers from all the State of Rio Grande do Sul in Brazil, the data set contains a sample of 11681 customers . Initially, 16 variables were considered:
