@@ -1,0 +1,187 @@
+---
+title: "Hotel Reservations"
+author: "Raquel Rossi"
+date: "2023-02-19"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+library(hrbrthemes)
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(caTools)
+library(e1071)
+library(caret)
+library(pander)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Hotel Reservations
+
+Os canais online de reserva de hotéis mudaram drasticamente as possibilidades de reserva e o comportamento dos clientes. Um número significativo de reservas de hotéis é cancelado devido a cancelamentos ou não comparecimento. Os motivos típicos para cancelamentos incluem mudança de planos, conflitos de agendamento, etc. Isso geralmente é facilitado pela opção de fazê-lo gratuitamente ou, de preferência, a um custo baixo, o que é benéfico para os hóspedes do hotel.
+
+Você consegue prever se o cliente vai honrar a reserva ou cancelá-la?
+
+```{r,  message=FALSE}
+dados <- read_csv("Hotel Reservations.csv")
+```
+
+## Análise descritiva 
+
+```{r,  message=FALSE}
+ggplot(dados, aes(x=as.factor(no_of_adults), fill=as.factor(no_of_adults)))  + 
+      geom_bar() +
+      geom_text(aes(y = (after_stat(count)),label =  scales::percent((after_stat(count))/sum(after_stat(count)))), stat="count",vjust=-1) +       
+      geom_text(stat='count', aes(label=after_stat(count)), vjust=3) +
+      theme(legend.position="none") +
+      labs(title = "Distribuição de frequência do número de adultos",
+      x = 'Adultos',
+      y = 'Frequência') 
+```
+
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas faz uma reserva em casal (71.97%), seguido por pessoas que viajam sozinhas (21.21%) e por pessoas que viajam em grupos de 3 ou mais adultos (6.43%).
+
+```{r,  message=FALSE}
+ggplot(dados, aes(x=as.factor(no_of_children), fill=as.factor(no_of_children)))  + 
+      geom_bar() +
+      geom_text(aes(y = (after_stat(count)),label =  scales::percent((after_stat(count))/sum(after_stat(count)))), stat="count",vjust=-1) +       
+      geom_text(stat='count', aes(label=after_stat(count)), vjust=3) +
+      theme(legend.position="none") +
+      labs(title = "Distribuição de frequência do número de crianças",
+      x = 'Crianças',
+      y = 'Frequência') 
+```
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas não viaja com nenhuma criança (92.56%), seguido por pessoas que viajam com uma criança (4.46%) e por pessoas que viajam com duas crianças (2.91%).
+
+
+```{r,  message=FALSE}
+ggplot(dados, aes(x=as.factor(type_of_meal_plan), fill=as.factor(type_of_meal_plan)))  + 
+      geom_bar() +
+      geom_text(aes(y = (after_stat(count)),label =  scales::percent((after_stat(count))/sum(after_stat(count)))), stat="count",vjust=-1) +       
+      geom_text(stat='count', aes(label=after_stat(count)), vjust=3) +
+      theme(legend.position="none") +
+      labs(title = "Distribuição de frequência do tipo de refeição",
+      x = 'Tipo de refeição',
+      y = 'Frequência')
+
+```
+
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas escolhe o Meal Plan 1 (76.7%), seguido por pessoas que não escolhem nenhum tipo de plano (14.1%) e por pessoas que escolhem o Meal Plan 2 (9.1%).
+
+```{r,  message=FALSE}
+ggplot(dados, aes(x=as.factor(required_car_parking_space), fill=as.factor(required_car_parking_space)))  + 
+      geom_bar() +
+      geom_text(aes(y = (after_stat(count)),label =  scales::percent((after_stat(count))/sum(after_stat(count)))), stat="count",vjust=-1) +       
+      geom_text(stat='count', aes(label=after_stat(count)), vjust=3) +
+      theme(legend.position="none") +
+      labs(title = "Distribuição de frequência da necessidade de vaga para carro",
+      x = 'Vaga para carro',
+      y = 'Frequência')
+
+```
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas não necessita de reserva de vaga para estacionar (97%), ou seja talvez a maioria dos hóspedes não use o próprio carro para chegar ao local.
+
+```{r,  message=FALSE}
+ggplot(dados, aes(x=as.factor(room_type_reserved), fill=as.factor(room_type_reserved)))  + 
+      geom_bar() +
+      geom_text(aes(y = (after_stat(count)),label =  scales::percent((after_stat(count))/sum(after_stat(count)))), stat="count",vjust=-1) +       
+      geom_text(stat='count', aes(label=after_stat(count)), vjust=3) +
+      theme(legend.position="none") +
+      labs(title = "Distribuição de frequência do tipo de quarto reservado",
+      x = 'Tipo de quarto',
+      y = 'Frequência')
+
+```
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas reserva o quarto do tipo 1 (77.55%), seguido por pessoas que reservam o quarto do tipo 4 (16.70%) e por pessoas que reservam o quarto do tipo 2 (1.91%).
+
+```{r,  message=FALSE}
+dados %>%
+  ggplot( aes(x=lead_time)) +
+    geom_histogram( binwidth=30, fill="#69b3a2", color="#e9ecef", alpha=0.9) +
+    ggtitle("Números de dias entre a data da reserva e a data de chegada") +
+    theme_ipsum() +
+    theme(
+      plot.title = element_text(size=15)
+    )
+
+```
+Pelo gráfico de histograma acima, percebemos que a maioria das pessoas não faz reserva para se hospedar nessa rede de hotel.
+
+##  Modelo classificação Naive Bayes 
+
+Escolhi o algoritmo Naive Bayes, pois ele desconsidera correlações entre variáveis, tratando cada variável de forma independente. Este algoritmo também é mais rápido de implementar do que por exemplo um algoritmo SVM e além de não precisar de muitos dados para fazer a classificação.
+
+```{r,  message=FALSE}
+# transformando os atributos categóricos
+dados$booking_status2 <- factor(dados$booking_status, 
+                               label = c("0", "1"),
+                               levels = c("Not_Canceled", "Canceled")) 
+
+#table(dados$type_of_meal_plan)
+dados$type_of_meal_plan <- factor(dados$type_of_meal_plan, 
+                               label = c("1", "2", "3", "4"),
+                               levels = c("Meal Plan 1", "Meal Plan 2", "Meal Plan 3", "Not Selected"))
+
+#table(dados$room_type_reserved)
+dados$room_type_reserved <- factor(dados$room_type_reserved, 
+                               label = c("1", "2", "3", "4", "5", "6", "7"),
+                               levels = c("Room_Type 1" ,"Room_Type 2", "Room_Type 3", "Room_Type 4",   "Room_Type 5", "Room_Type 6", "Room_Type 7"))
+
+#table(dados$market_segment_type)
+dados$market_segment_type <- factor(dados$market_segment_type, 
+                               label = c("1", "2", "3", "4", "5"),
+                               levels = c("Aviation", "Complementary", "Corporate", "Offline", "Online"))
+
+# escalonando atributos numéricos
+dados[,2:5] = scale(dados[,2:5])
+dados[,7] = scale(dados[,7])
+dados[,9:12] = scale(dados[,9:12])
+dados[,14:18] = scale(dados[,14:18])
+
+# excluindo colunas repetidas
+dados_mod <- select(dados, -booking_status)
+
+# dividindo a base em treino e teste
+set.seed(1)
+divisao = sample.split(dados_mod$booking_status2, SplitRatio = 0.75)
+base_treinamento = subset(dados_mod[-1], divisao == TRUE) 
+base_teste = subset(dados_mod[-1], divisao == FALSE) 
+```
+
+## Aplicando Naive Bayes
+
+```{r,  message=FALSE}
+
+classificador = naiveBayes(x = base_treinamento, y = base_treinamento$booking_status2)
+predictions = predict(classificador, newdata = base_teste)
+```
+
+## Matriz de confusão
+
+```{r}
+matriz_confusao = table(base_teste$booking_status2, predictions)
+confusionMatrix(matriz_confusao)
+```
+
+Analisando a matriz de confusão, na classe 0 (cliente não cancelou a reserva) o algoritmo classificou corretamente 5632 observações e incorretamente 466 observações, na classe 1 (cliente cancelou a reserva) o algoritmo classificou corretamente 2940 observações e incorretamente 31 observações. Em ambas as classes, o algoritmo teve um bom percentual de classificações corretas.
+
+A acurácia do modelo foi de 94.52%.
+
+# Predições
+
+```{r, include=FALSE}
+pred = subset(dados_mod, divisao == FALSE) 
+pred$predictions <- NULL
+pred$predictions <- predictions
+```
+Dos primeiros 50 IDs, 49 foram classificados corretamente e 1 incorretamente.
+```{r}
+pred[, -c(2:18)] %>% 
+    head(50) %>% 
+   pander()
+```
