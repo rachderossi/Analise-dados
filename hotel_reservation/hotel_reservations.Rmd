@@ -44,7 +44,7 @@ ggplot(dados, aes(x=as.factor(no_of_adults), fill=as.factor(no_of_adults)))  +
       y = 'Frequência') 
 ```
 
-Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas faz uma reserva em casal (71.97%), seguido por pessoas que viajam sozinhas (21.21%) e por pessoas que viajam em grupos de 3 ou mais adultos (6.43%).
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas faz uma reserva em casal (71.97%), seguido por pessoas que viajam sozinhas (21.21%) e por pessoas que viajam em grupos de 3 ou mais adultos (6.39%).
 
 ```{r,  message=FALSE}
 ggplot(dados, aes(x=as.factor(no_of_children), fill=as.factor(no_of_children)))  + 
@@ -56,7 +56,7 @@ ggplot(dados, aes(x=as.factor(no_of_children), fill=as.factor(no_of_children))) 
       x = 'Crianças',
       y = 'Frequência') 
 ```
-Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas não viaja com nenhuma criança (92.56%), seguido por pessoas que viajam com uma criança (4.46%) e por pessoas que viajam com duas crianças (2.91%).
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas não viaja com nenhuma criança (92.56%), seguido por pessoas que viajam com uma criança (4.46%) e por pessoas que viajam com duas crianças (2.92%).
 
 
 ```{r,  message=FALSE}
@@ -97,7 +97,7 @@ ggplot(dados, aes(x=as.factor(room_type_reserved), fill=as.factor(room_type_rese
       y = 'Frequência')
 
 ```
-Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas reserva o quarto do tipo 1 (77.55%), seguido por pessoas que reservam o quarto do tipo 4 (16.70%) e por pessoas que reservam o quarto do tipo 2 (1.91%).
+Pelo gráfico de barras acima, percebemos que nesse hotel a maioria das pessoas reserva o quarto do tipo 1 (77.55%), seguido por pessoas que reservam o quarto do tipo 4 (16.70%) e por pessoas que reservam o quarto do tipo 6 (2.66%).
 
 ```{r,  message=FALSE}
 dados %>%
@@ -110,7 +110,7 @@ dados %>%
     )
 
 ```
-Pelo gráfico de histograma acima, percebemos que a maioria das pessoas não faz reserva para se hospedar nessa rede de hotel.
+Pelo gráfico de histograma acima, percebemos que a maioria das pessoas não faz reserva com antecedência para se hospedar nessa rede de hotel.
 
 ##  Modelo classificação Naive Bayes 
 
