@@ -1,37 +1,37 @@
-# Data Analysis R
+# Análise de Dados 
 
-## Customer Segmentation
-The data set contains sociodemographic and firmographic features about 2.240 customers who were contacted. Additionally, it contains a flag for those customers who responded the campaign, by buying the product.
+## Segmentação de Clientes
+O conjunto de dados contém características sociodemográficas e firmográficas de 2.240 clientes que foram contatados. Além disso, contém uma sinalização para os clientes que responderam à campanha, comprando o produto.
 
-In this project, the RFM calculation is made in order to understand how customers should be classified. Afterwards a predictive classification model is made using the Naive Bayes algorithm.
+Neste projeto o cálculo do RFM é feito para entender como os clientes devem ser classificados. Posteriormente é feito um modelo de classificação preditiva utilizando o algoritmo Naive Bayes.
 
-## Geographically Weighted Logistic Regression in Credit Risk Analysis
-Comparison between Logistic Regression and Geographically Weighted Logistic Regression. The data set will be from a chain of pharmacies that offers a credit card to customers from all the State of Rio Grande do Sul in Brazil, the data set contains a sample of 11681 customers.
+## Regressão Logística Geograficamente Ponderada na Análise de Risco de Crédito
+Comparação entre Regressão Logística e Regressão Logística Geograficamente Ponderada. O conjunto de dados será de uma rede de farmácias que oferece cartão de crédito para clientes de todo o Estado do Rio Grande do Sul no Brasil, o conjunto de dados contém uma amostra de 11.681 clientes.
 
-## Inbound Marketing
-The launch of a new innovative product that will help the population to access banking services through smartphones is coming. The goal is to convert 1,000 customers in the most unbanked cities in Brazil.
+## Marketing de Entrada
+Está chegando o lançamento de um novo produto inovador que ajudará a população a acessar serviços bancários por meio de smartphones. A meta é converter 1.000 clientes nas cidades mais desbancarizadas do Brasil.
 
-Actions to identify the cities for the campaign:
+Ações para identificar as cidades da campanha:
 
-1) Classify Brazilian cities by the level of banking.
-2) Estimate the number of customers converted in each city.
+1) Classifique as cidades brasileiras pelo nível de banca.
+2) Estime o número de clientes convertidos em cada cidade.
 
-The final database should contain:
+O banco de dados final deve conter:
 
-- Name of the city
-- State
-- Population
-- Level of banking
-- Converted Customers
+- Nome da cidade
+- Estado
+- População
+- Nível de bancos
+- Clientes convertidos
 
-## TV Shows and Movies listed on Netflix
-This dataset consists of tv shows and movies available on Netflix as of 2019. The dataset is collected from Flixable which is a third-party Netflix search engine.
+## Programas de TV e filmes listados na Netflix
+Este conjunto de dados consiste em programas de TV e filmes disponíveis na Netflix em 2019. O conjunto de dados é coletado do Flixable, um mecanismo de pesquisa terceirizado da Netflix.
 
-## Interactive barplot with Shiny
-Check out the "barplot" file with the steps to create your own barplot using Shiny.
+## Gráfico de barras interativo com Shiny
+Confira o arquivo “barplot” com as etapas para criar seu próprio barplot usando o Shiny.
 
-## Hotel Reservations
-Classifier model to predict whether customers of a hotel chain will honor the reservation made or cancel.
+## Reservas de hotéis
+Modelo classificador para prever se os clientes de uma rede hoteleira honrarão ou cancelarão a reserva realizada.
 
-## How to create a percentage plot with ggplot2
-Check out the "percentage plot" file with the steps to create your own percentage plot in R!
+## Como criar um gráfico percentual com ggplot2
+Confira o arquivo "gráfico percentual" com os passos para criar seu próprio gráfico percentual em R!
