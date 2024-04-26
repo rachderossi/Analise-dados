@@ -28,7 +28,7 @@ O banco de dados final deve conter:
 Este conjunto de dados consiste em programas de TV e filmes disponíveis na Netflix em 2019. O conjunto de dados é coletado do Flixable, um mecanismo de pesquisa terceirizado da Netflix.
 
 ## Gráfico de barras interativo com Shiny
-Confira o arquivo “barplot” com as etapas para criar seu próprio barplot usando o Shiny.
+Confira o arquivo “barplot” com as etapas para criar seu próprio gráfico de barras usando o Shiny.
 
 ## Reservas de hotéis
 Modelo classificador para prever se os clientes de uma rede hoteleira honrarão ou cancelarão a reserva realizada.
