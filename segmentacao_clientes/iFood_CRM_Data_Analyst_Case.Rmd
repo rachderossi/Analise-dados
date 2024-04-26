@@ -320,7 +320,7 @@ base_treinamento = subset(dados[-1], divisao == TRUE)
 base_teste = subset(dados[-1], divisao == FALSE) 
 ```
 
-# Aplicando o algorítmo Naive Bayes
+# Aplicando o algoritmo Naive Bayes
 
 ```{r, include=FALSE}
 classificador = naiveBayes(x = base_treinamento[-24], y = base_treinamento$Response)
