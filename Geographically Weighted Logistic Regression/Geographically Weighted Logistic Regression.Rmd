@@ -96,7 +96,7 @@ lat_long_POA_sample1 <- as.data.frame(lat_long_POA)
          #filter(sample == 0)
 
 # padronizando o CEP para rodar na função busca_multi
-# <- gsub("-", "", data_cep_sample0$cep_res)
+# cep <- gsub("-", "", data_cep_sample0$cep_res)
 
 # cep <- as.data.frame(cep)
 
