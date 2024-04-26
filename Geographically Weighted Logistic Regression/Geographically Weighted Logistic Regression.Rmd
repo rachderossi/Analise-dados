@@ -1,5 +1,5 @@
 ---
-title: <center> "Geographically Weighted Logistic Regression in Credit Risk Analysis" </center>
+title: <center> "Regressão Logística Geograficamente Ponderada na Análise de Risco de Crédito" </center>
 author: <center> "Raquel Rossi" <center>
 date: <center> `r format(Sys.time(), '%d %B, %Y')` </center>
 output:
@@ -46,19 +46,17 @@ library(spgwr)
 ```
 
 ```{r}
-# opening database
+# base de dados
 data <- read_sav("dados_agafarma.sav")
 ```
 
 ```{r}
-# convert zip codes
+# convertendo CEPs
 
-# basically I selected Porto Alegre zip codes which are the ones that start with 90 and 91, are a total of 3551 obs. Then I selected those from the analysis sample with 2128 obs
-# of those 2128 obs I was able to find the latitude and longitude of 2014 obs
-# zip code in Brazil are called CEP's
+# basicamente selecionei os CEPs de Porto Alegre que são aqueles que começam com 90 e 91, são um total de 3551 obs. Então selecionei aqueles da amostra de análise com 2.128 obs
+# desses 2.128 obs, consegui encontrar a latitude e longitude de 2014 obs.
 
-# filtering zip codes only from Porto Alegre
-data_cep <- data %>%
+# filtrando CEPs somente de Porto Alegredata_cep <- data %>%
    dplyr::select(amostra, cep_res, RES2POS)  %>% 
          filter(RES2POS == 90 | RES2POS == 91)
 
@@ -66,7 +64,7 @@ data_cep_sample1 <- data_cep %>%
     dplyr::select(amostra, cep_res, RES2POS)  %>% 
          filter(amostra == 1)
 
-# standardizing the zip code to run in the busca_multi function
+#padronizando o CEP para rodar na função busca_multi
 cep <- gsub("-", "", data_cep_sample1$cep_res)
 
 cep <- as.data.frame(cep)
@@ -83,12 +81,12 @@ writexl::write_xlsx(cep_convert3, "C:/Users/RaquelRossi/Downloads/cep3.xls")
 writexl::write_xlsx(cep_convert4, "C:/Users/RaquelRossi/Downloads/cep4.xls")
 writexl::write_xlsx(cep_convert5, "C:/Users/RaquelRossi/Downloads/cep5.xls")
 
-# database converted to latitude-longitude
-lat_long_POA <- read_excel("lat_long_POA.xlsx") # from 2128 obs I found latitudes and longitudes of 2014 obs
+# banco de dados convertido para latitude-longitude
+lat_long_POA <- read_excel("lat_long_POA.xlsx") # de 2128 obs encontrei latitudes e longitudes de 2014 obs
 
 lat_long_POA_sample1 <- as.data.frame(lat_long_POA)
 
-# filtering zip codes only from Porto Alegre
+# filtrando CEPs somente de Porto Alegre
 # data_cep <- data %>%
    #dplyr::select(sample, cep_res, RES2POS)  %>% 
          #filter(RES2POS == 90 | RES2POS == 91)
