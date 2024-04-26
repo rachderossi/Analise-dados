@@ -159,7 +159,7 @@ stepwise <- step(mod, direction = "both")
 mod_stepwise <- glm(stepwise$formula, family = "binomial", data = data_analysis)
 
 
-#modelo com as variáveis que possuem significância 5%
+# modelo com as variáveis que possuem significância 5%
 logistic_reg <- glm(tp60_atu ~ DIDAD1 + DIDAD2 + DIDAD7 + DIDAD8 + DSEXOF + DPRIM + DCASADO + DTSERV2 + DTSERV8+  DTSERV9 + DOCUP_AS + DOCUP_AU + DRES_ALU + DRES_OUT + DGCEPRE1 + DGCEPRE2 + DGCEPRE3 + DCIDNA2 + DCIDNA7, family = "binomial", data = data_analysis)
 
 summary(logistic_reg)
