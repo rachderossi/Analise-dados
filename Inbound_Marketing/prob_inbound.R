@@ -2,7 +2,7 @@ nivel_bancarizacao <- read_excel("nivel_bancarizacao.xls",
                                  col_types = c("text", "text", "numeric", 
                                                "numeric", "numeric", "numeric"))
 
-# state teledensity of postpaid cell phones
+# teledensidade estadual de celulares pós-pagos
 teledensidade_estad <-nivel_bancarizacao$POS_PAGOS/nivel_bancarizacao$POPULACAO
 round(teledensidade_estad, digits = 4)
 
@@ -13,10 +13,10 @@ CP <- ifelse(nivel_bancarizacao$POPULACAO < 5000, 5,
                            ifelse(nivel_bancarizacao$POPULACAO > 100000 & nivel_bancarizacao$POPULACAO <500000, 20,
                                   ifelse(nivel_bancarizacao$POPULACAO > 500000, 25, NA)))))
 
-# conversion probability (in percent)
+# probabilidade de conversão (em porcentagem)
 prob_conversao <- (nivel_bancarizacao$IDHM^CP)*(teledensidade_estad/1.5)*100
 
-# number of converted customers
+# número de clientes convertidos
 clientes_conv <- (nivel_bancarizacao$POPULACAO*prob_conversao)/100
 round(clientes_conv, digits = 1)
 
@@ -27,6 +27,6 @@ clientes_conv <- data.table(MUNICIPIO = nivel_bancarizacao$MUNICIPIO,
                             NIVEL_BANCARIZACAO = nivel_bancarizacao$BANCARIZACAO,
                             CLIENTES_CONVERTIDOS = clientes_conv) 
 
-# transform into excel file
+# arquivo excel
 library(xlsx)
 write.xlsx(clientes_conv, "entrega.final.xls")
