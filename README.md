@@ -6,22 +6,6 @@ Confira o arquivo "grafico_percentual" com os passos para criar seu próprio gr�
 ## Gráfico de barras interativo com Shiny
 Confira o arquivo “barplot_shiny” com as etapas para criar seu próprio gráfico de barras usando o Shiny.
 
-## Marketing de Entrada
-Está chegando o lançamento de um novo produto inovador que ajudará a população a acessar serviços bancários por meio de smartphones. A meta é converter 1.000 clientes nas cidades mais desbancarizadas do Brasil.
-
-Ações para identificar as cidades da campanha:
-
-1) Classifique as cidades brasileiras pelo nível de banca.
-2) Estime o número de clientes convertidos em cada cidade.
-
-O banco de dados final deve conter:
-
-- Nome da cidade
-- Estado
-- População
-- Nível de bancarização
-- Clientes convertidos
-
 ## Programas de TV e filmes listados na Netflix
 Este conjunto de dados consiste em programas de TV e filmes disponíveis na Netflix em 2019. O conjunto de dados é coletado do Flixable, um mecanismo de pesquisa terceirizado da Netflix.
 
