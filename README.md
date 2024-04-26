@@ -1,7 +1,7 @@
 # Análise de Dados 
 
-## Como criar um gráfico de barras percentual com ggplot2
-Confira o arquivo "grafico_percentual" com os passos para criar seu próprio gráfico de barras percentual em R!
+## Como criar um gráfico de barras com percentual utilizando ggplot2
+Confira o arquivo "grafico_percentual" com os passos para criar seu próprio gráfico de barras com percentual em R!
 
 ## Gráfico de barras interativo com Shiny
 Confira o arquivo “barplot_shiny” com as etapas para criar seu próprio gráfico de barras usando o Shiny.
