@@ -1,0 +1,350 @@
+---
+title: <center> "Regressão Logística Geograficamente Ponderada na Análise de Risco de Crédito" </center>
+author: <center> "Raquel Rossi" <center>
+date: <center> `r format(Sys.time(), '%d %B, %Y')` </center>
+output:
+  html_document:
+    toc: true
+    toc_depth: 1
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    theme: united
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+
+if (!require("haven")) install.packages("haven")
+if (!require("plyr")) install.packages("plyr")
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("MASS")) install.packages("MASS")
+if (!require("caret")) install.packages("caret")
+if (!require("ROCR")) install.packages("ROCR")
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("pROC")) install.packages("pROC")
+if (!require("cepR")) install.packages("cepR")
+if (!require("readxl")) install.packages("readxl")
+if (!require("GWmodel")) install.packages("GWmodel")
+if (!require("geobr")) install.packages("geobr")
+if (!require("sf")) install.packages("sf")
+if (!require("spgwr")) install.packages("spgwr")
+
+library(haven)
+library(plyr)
+library(dplyr)
+library(MASS)
+library(caret)
+library(ROCR)
+library(ggplot2)
+library(pROC)
+library(cepR)
+library(readxl)
+library(GWmodel)
+library(sf)
+library(spgwr)
+```
+
+```{r}
+# banco de dados
+data <- read_sav("dados_agafarma.sav")
+```
+
+```{r}
+# convertendo CEPs
+
+# basicamente selecionei os CEPs de Porto Alegre que são aqueles que começam com 90 e 91, são um total de 3551 obs. Então selecionei aqueles da amostra de análise com 2.128 obs
+# desses 2.128 obs, consegui encontrar a latitude e longitude de 2014 obs.
+
+# filtrando CEPs somente de Porto Alegredata_cep <- data %>%
+   dplyr::select(amostra, cep_res, RES2POS)  %>% 
+         filter(RES2POS == 90 | RES2POS == 91)
+
+data_cep_sample1 <- data_cep %>%
+    dplyr::select(amostra, cep_res, RES2POS)  %>% 
+         filter(amostra == 1)
+
+#padronizando o CEP para rodar na função busca_multi
+cep <- gsub("-", "", data_cep_sample1$cep_res)
+
+cep <- as.data.frame(cep)
+
+cep_convert <- busca_multi(cep[1:500,] , token = "55035b2e11b987e9fb98551221bc066e")
+cep_convert2 <- busca_multi(cep[501:1000,] , token = "55035b2e11b987e9fb98551221bc066e")
+cep_convert3 <- busca_multi(cep[1001:1500,] , token = "55035b2e11b987e9fb98551221bc066e")
+cep_convert4 <- busca_multi(cep[1501:2000,] , token = "55035b2e11b987e9fb98551221bc066e")
+cep_convert5 <- busca_multi(cep[2001:2128,] , token = "55035b2e11b987e9fb98551221bc066e")
+
+writexl::write_xlsx(cep_convert, "C:/Users/RaquelRossi/Downloads/cep1.xls")
+writexl::write_xlsx(cep_convert2, "C:/Users/RaquelRossi/Downloads/cep2.xls")
+writexl::write_xlsx(cep_convert3, "C:/Users/RaquelRossi/Downloads/cep3.xls")
+writexl::write_xlsx(cep_convert4, "C:/Users/RaquelRossi/Downloads/cep4.xls")
+writexl::write_xlsx(cep_convert5, "C:/Users/RaquelRossi/Downloads/cep5.xls")
+
+# banco de dados convertido para latitude-longitude
+lat_long_POA <- read_excel("lat_long_POA.xlsx") # de 2128 obs encontrei latitudes e longitudes de 2014 obs
+
+lat_long_POA_sample1 <- as.data.frame(lat_long_POA)
+
+# filtrando CEPs somente de Porto Alegre
+# data_cep <- data %>%
+   #dplyr::select(sample, cep_res, RES2POS)  %>% 
+         #filter(RES2POS == 90 | RES2POS == 91)
+
+# data_cep_sample0 <- data_cep %>%
+   #dplyr::select(sample, cep_res, RES2POS)  %>% 
+         #filter(sample == 0)
+
+# padronizando o CEP para rodar na função busca_multi
+# cep <- gsub("-", "", data_cep_sample0$cep_res)
+
+# cep <- as.data.frame(cep)
+
+# cep_convert <- busca_multi(cep[1:541,] , token = "55035b2e11b987e9fb98551221bc066e")
+
+# writexl::write_xlsx(cep_convert, "C:/Users/RaquelRossi/Downloads/cep1.xls")
+
+# banco de dados convertido para latitude-longitude
+lat_long_POA2 <- read_excel("lat_long_POA2.xlsx") #  de 541 obs encontrei latitudes e longitudes de 515 obs 
+
+lat_long_POA_sample0 <- as.data.frame(lat_long_POA2)
+```
+
+------------------------------------------------------------------ Regressão Logística -------------------------------------------------------------------
+
+```{r}
+# primeiro foram selecionados todas as variáveis, exceto códigos postais comerciais, o que dá um total de 61 variáveis
+
+# filtrando a base de dados apenas para ampstra = 1 (treinar amostra)
+data_analysis <- data %>%
+   dplyr::select(amostra, tp60_atu, DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
+         DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res)  %>% 
+         filter(amostra == 1)
+
+data_analysis <- data_analysis %>%
+  dplyr::select(DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF, DSEXOM,
+         DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res, tp60_atu)  %>% 
+         filter(RES2POS == 90 | RES2POS == 91)
+
+data_analysis["latitude"] <- lat_long_POA_sample1$latitude
+data_analysis["longitude"] <- lat_long_POA_sample1$longitude
+
+# removendo linhas que não foram encontradas latitudes e/ou longitudes
+data_analysis <- data_analysis[!is.na(data_analysis$latitude),]
+
+# seleção de variáveis - método stepwise (forward e backward)
+mod <- glm(tp60_atu ~ DIDAD1+ DIDAD2+ DIDAD3+ DIDAD4+ DIDAD5+ DIDAD6+ DIDAD7+ DIDAD8+ DSEXOF+
+         DSEXOM+ DPRIM+ DSEC+ DSUP+ DCASADO+ DCONCUB+ DDIVOR+ DOUTR+ DSEPARA+ DSOLTE+ 
+         DVIUVO+ DTSERV1+ DTSERV2+ DTSERV3+ DTSERV4+  DTSERV5+  DTSERV6+  DTSERV7+ DTSERV8+
+         DTSERV9+ DFILHO+ DOCUP_AP+ DOCUP_AS+ DOCUP_AU+
+         DOCUP_FP+ DOCUP_PL+ DRES_PAI+ DRES_ALU+ DRES_CED+ DRES_OUT+ DRES_PRO+ DGCEPRE1+ DGCEPRE2+  
+         DGCEPRE3+ DGCEPRE5+ DGCEPRE6+ DGCEPRE7+ DGPROF1+ DGPROF2+ DGPROF3+ 
+         DGPROF5+ DGPROF6+ DGPROF7+ DCIDNA1+ DCIDNA2+ DCIDNA3+  
+         DCIDNA5+ DCIDNA6+ DCIDNA7, family = "binomial", data=data_analysis)
+
+stepwise <- step(mod, direction = "both") 
+
+mod_stepwise <- glm(stepwise$formula, family = "binomial", data = data_analysis)
+
+
+# modelo com as variáveis que possuem significância 5%
+logistic_reg <- glm(tp60_atu ~ DIDAD1 + DIDAD2 + DIDAD7 + DIDAD8 + DSEXOF + DPRIM + DCASADO + DTSERV2 + DTSERV8+  DTSERV9 + DOCUP_AS + DOCUP_AU + DRES_ALU + DRES_OUT + DGCEPRE1 + DGCEPRE2 + DGCEPRE3 + DCIDNA2 + DCIDNA7, family = "binomial", data = data_analysis)
+
+summary(logistic_reg)
+```
+
+```{r}
+# banco de dados para amostra de teste - Regressão Logística
+data_test <- data %>%
+   dplyr::select(amostra, tp60_atu, DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
+         DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res)  %>% 
+         filter(amostra == 0)
+
+data_test <- data_test %>%
+  dplyr::select(DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
+         DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res, tp60_atu)  %>% 
+         filter(RES2POS == 90 | RES2POS == 91)
+
+data_test["latitude"] <- lat_long_POA_sample0$latitude
+data_test["longitude"] <- lat_long_POA_sample0$longitude
+
+# removendo linhas que não foram encontradas latitudes e/ou longitudes
+data_test <- data_test[!is.na(data_test$latitude),]
+
+# matriz de confusão
+predict <- predict(logistic_reg, type = 'response', newdata = data_test[-(62:64)])
+pred <- prediction(as.numeric(predict), as.numeric(data_test$tp60_atu))
+
+forecasting <- ifelse(predict >= 0.6, 1, 0)
+confusion_matrix <- table(data_test$tp60_atu, forecasting)
+
+confusionMatrix(confusion_matrix) 
+```
+
+```{r}
+predict2 <- predict(logistic_reg, type = 'response', newdata = data_analysis[-(62:64)])
+pred2 <- prediction(as.numeric(predict2), as.numeric(data_analysis$tp60_atu))
+
+forecasting2 <- ifelse(predict2 >= 0.6, 1, 0)
+confusion_matrix <- table(data_analysis$tp60_atu, forecasting2)
+
+confusionMatrix(confusion_matrix) 
+```
+
+```{r}
+AIC(logistic_reg) 
+```
+
+```{r}
+# teste KS
+
+# amostra de teste - Regressão Logística
+perf <- performance(pred,"tpr","fpr")
+
+ks <- max(attr(perf, "y.values")[[1]] - (attr(perf, "x.values")[[1]]))
+
+# amostra de treino - Regressão Logística
+perf2 <- performance(pred2,"tpr","fpr")
+
+ks2 <- max(attr(perf2, "y.values")[[1]] - (attr(perf2, "x.values")[[1]]))
+```
+
+```{r}
+# Curva ROC – Regressão Logística
+
+# amostra de teste
+roc <- roc(data_test$tp60_atu, predict)
+auc <- round(auc(data_test$tp60_atu, predict),4)
+
+# ROC gráfico 
+ggroc(roc, colour = 'steelblue', size = 2) +
+  ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')')) +
+  labs(x = "Specificity", y = "Sensitivity") 
+
+# amostra de treino
+roc2 <- roc(data_analysis$tp60_atu, predict2)
+auc2 <- round(auc(data_analysis$tp60_atu, predict2),4)
+```
+
+```{r}
+table_log_reg<- data.frame(Measures= c("AUC", "KS"), 
+                    Train = c(auc2*(100), ks2*(100)), 
+                    Test = c(auc*(100), ks*(100)),
+                    stringsAsFactors = TRUE)
+
+table_log_reg
+```
+
+------------------------------------------------------- Regressão Logística Geograficamente Ponderada ---------------------------------------------------
+
+```{r}
+data_analysis_GWLR <- data %>%
+   dplyr::select(amostra, tp60_atu, DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
+         DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res)  %>% 
+         filter(amostra == 1)
+
+data_analysis_GWLR <- data_analysis_GWLR %>%
+  dplyr::select(DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF, DSEXOM,
+         DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res, tp60_atu)  %>% 
+         filter(RES2POS == 90 | RES2POS == 91)
+
+
+data_analysis_GWLR["latitude"] <- lat_long_POA_sample1$latitude
+data_analysis_GWLR["longitude"] <- lat_long_POA_sample1$longitude
+
+# removendo linhas que não foram encontradas latitudes e/ou longitudes
+data_analysis_GWLR <- data_analysis_GWLR[!is.na(data_analysis_GWLR$latitude),]
+```
+
+```{r}
+# banco de dados para amostra de teste - Regressão logística geograficamente ponderada
+data_test_GWLR <- data %>%
+   dplyr::select(amostra, tp60_atu, DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
+         DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res)  %>% 
+         filter(amostra == 0)
+
+data_test_GWLR <- data_test_GWLR %>%
+  dplyr::select(DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
+         DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
+         DVIUVO, DTSERV1, DTSERV2, DTSERV3, DTSERV4,  DTSERV5,  DTSERV6,  DTSERV7, DTSERV8,
+         DTSERV9, DFILHO, DOCUP_AP, DOCUP_AS, DOCUP_AU,
+         DOCUP_FP, DOCUP_PL, DRES_PAI, DRES_ALU, DRES_CED, DRES_OUT, DRES_PRO, DGCEPRE1, DGCEPRE2,  
+         DGCEPRE3, DGCEPRE4, DGCEPRE5, DGCEPRE6, DGCEPRE7, DGPROF1, DGPROF2, DGPROF3, 
+         DGPROF4, DGPROF5, DGPROF6, DGPROF7, DCIDNA1, DCIDNA2, DCIDNA3, DCIDNA4,   
+         DCIDNA5, DCIDNA6, DCIDNA7, RES2POS, cep_res, tp60_atu)  %>% 
+         filter(RES2POS == 90 | RES2POS == 91)
+
+
+data_test_GWLR["latitude"] <- lat_long_POA_sample0$latitude
+data_test_GWLR["longitude"] <- lat_long_POA_sample0$longitude
+
+#removendo linhas que não foram encontradas latitudes e/ou longitudes
+data_test_GWLR <- data_test_GWLR[!is.na(data_test_GWLR$latitude),]
+```
+
+
+```{r}
+# calculando a distância entre os pontos
+RLGP.spdf <- SpatialPointsDataFrame(data_analysis_GWLR[, 65:66], data_analysis_GWLR)
+DM <- gw.dist(dp.locat = coordinates(RLGP.spdf))
+
+# modelo 1 - Função de ponderação gaussiana fixa
+bw.ggwr1 <- bw.ggwr(logistic_reg$formula, RLGP.spdf, family ="binomial", approach="AIC", kernel="gaussian", adaptive = FALSE, dMat = DM)
+
+mod1 <- ggwr.basic(logistic_reg$formula, RLGP.spdf, bw = bw.ggwr1, family ="binomial", kernel = "gaussian", adaptive = FALSE, dMat = DM)
+
+# modelo 2 - Função de ponderação gaussiana adaptativa
+bw.ggwr2 <- bw.ggwr(logistic_reg$formula, RLGP.spdf, family ="binomial", approach="AIC", kernel="gaussian", adaptive = TRUE, dMat = DM)
+
+mod2 <- ggwr.basic(logistic_reg$formula, RLGP.spdf, bw = bw.ggwr2, family ="binomial", kernel = "gaussian", adaptive = TRUE, dMat = DM)
+```
+
+```{r}
+# Escolhendo o melhor modelo
+mod1$GW.diagnostic 
+mod2$GW.diagnostic 
+
+# Levando em consideração os valores de AIC dos modelos, o modelo 2 (Função de ponderação gaussiana adaptativa) foi o melhor.
+```

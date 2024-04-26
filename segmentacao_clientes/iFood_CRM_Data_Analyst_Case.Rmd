@@ -1,0 +1,357 @@
+---
+title: iFood - Segmentação de Clientes
+author: Raquel Rossi
+date: "`r Sys.Date()`"
+output: rmdformats::readthedown
+code_folding: hide
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(rmarkdown)
+library(rmdformats)
+library(ggplot2)
+library(rfm)
+library(dplyr)
+library(pander)
+library(sqldf)
+library(tidyverse)
+library(highcharter)
+library(RColorBrewer)
+library(caTools)
+library(e1071)
+library(caret)
+```
+
+# Problema
+
+O objetivo da equipe é construir um modelo preditivo que produza o maior lucro para a próxima campanha de marketing direto, prevista para o próximo mês. A nova campanha, sexta, visa vender um novo gadget para a Base de Dados de Clientes. Para construir o modelo foi realizada uma campanha piloto envolvendo 2.240 clientes. Os clientes foram selecionados aleatoriamente e contatados por telefone para aquisição do gadget. Durante os meses seguintes, os clientes que compraram a oferta foram devidamente rotulados. O custo total da campanha amostral foi de 6.720MU e a receita gerada pelos clientes que aceitaram a oferta foi de 3.674MU. Globalmente a campanha teve um lucro de 3.046MU. A taxa de sucesso da campanha foi de 15%. O objetivo da equipe é desenvolver um modelo que preveja o comportamento do cliente e aplicá-lo ao restante da base de clientes. Esperançosamente, o modelo permitirá que a empresa escolha a dedo os clientes com maior probabilidade de comprar a oferta, deixando de fora os não respondentes, tornando a próxima campanha altamente lucrativa. Além disso, além de maximizar o lucro da campanha, o CMO está interessado em entender para estudar as características dos clientes que desejam comprar o gadget.
+
+O conjunto de dados contém características sociodemográficas e firmográficas de 2.240 clientes que foram contatados. Além disso, contém uma sinalização para os clientes que responderam à campanha, comprando o produto.
+
+- Neste projeto o cálculo do RFM é feito para entender como os clientes devem ser classificados.
+- Posteriormente é feito um modelo de classificação preditiva utilizando o algoritmo Naive Bayes.
+
+```{r, include=FALSE}
+setwd("C:/Users/Administrador/Desktop/Customer_Segmentation")
+dados <- read.csv(file = 'ml_project1_data.csv')
+
+summary(dados)
+str(dados)
+```
+
+# RFM
+
+```{r}
+# valor gasto em produtos
+dados$mont <- dados$MntFishProducts+dados$MntFruits+dados$MntGoldProds+
+              dados$MntMeatProducts+dados$MntSweetProducts+dados$MntWines
+
+# quantidade de compras
+dados$num <- dados$NumCatalogPurchases+dados$NumDealsPurchases+
+             dados$NumStorePurchases+dados$NumWebPurchases
+
+customers_RFM = sqldf(
+    "SELECT ID,
+            MIN(Recency) AS 'Recency',
+            Sum(num) AS 'Frequency',
+            SUM(mont) AS 'Monetary'
+        FROM dados
+        GROUP BY 1"
+)
+
+customers_RFM %>% 
+  head(10) %>% 
+      formattable::formattable()
+```
+
+# Histogramas
+
+Para avaliar a distribuição dos parâmetros RFM podemos utilizar o histograma.
+
+```{r}
+# Recência
+ggplot(customers_RFM, aes(x = Recency)) +
+        geom_histogram(aes(fill = ..count..), binwidth = 10) +
+        scale_x_continuous(name = "Recency",
+                           breaks = seq(0, 100, 10),
+                           limits=c(0, 100)) +
+        scale_y_continuous(name = "Count") +
+        scale_fill_gradient(low="blue", high="red") + 
+        ggtitle("Frequency of the amount of time since the last purchase")
+
+# Frequência
+ggplot(customers_RFM, aes(x = Frequency)) +
+        geom_histogram(aes(fill = ..count..), binwidth = 5) +
+        scale_x_continuous(name = "Frequency",
+                           breaks = seq(0, 40, 5),
+                           limits=c(0, 40)) +
+        scale_y_continuous(name = "Count") +
+        scale_fill_gradient(low="blue", high="red") + 
+        ggtitle("Frequency of the amount of purchases made by the customer in the company")
+
+# Monetário
+ggplot(customers_RFM, aes(x = Monetary)) +
+        geom_histogram(aes(fill = ..count..), binwidth = 100) +
+        scale_x_continuous(name = "Monetary",
+                           breaks = seq(0, 2500, 500),
+                           limits=c(0, 2500)) +
+        scale_y_continuous(name = "Count") +
+        scale_fill_gradient(low="blue", high="red") + 
+        ggtitle("Frequency of the amount of value spent by the customer in the company")
+```
+
+# Percentil
+
+```{r}
+quantile(customers_RFM$Recency, probs = seq(0, 1, 0.20)) %>% pander()
+```
+
+Analisando quantos dias foi a última compra do cliente, podemos perceber que:
+
+- Top 20 clientes comprados nos últimos 19 dias;
+- Os próximos 20% de clientes compraram entre 19 e 39 dias;
+- Considerando que os últimos 20% dos clientes ficam mais de 79 dias sem realizar nenhuma compra.
+
+```{r}
+quantile(customers_RFM$Frequency, probs = seq(0, 1, 0.20)) %>% pander()
+```
+
+Quanto à frequência com que realizam compras, podemos constatar que:
+
+- Os clientes Top20 compraram mais de 22 vezes durante o período em análise;
+- Os seguintes 20% de clientes compraram entre 17 e 22 vezes;
+- Os últimos 20% dos clientes compraram 7 vezes no período em análise.
+
+```{r}
+quantile(customers_RFM$Monetary, probs = seq(0, 1, 0.20)) %>% pander()
+```
+
+Quanto ao valor gasto pelo cliente, podemos constatar que:
+
+- Os clientes Top20 gastam em média mais de 1174,00 u.m (unidade monetária);
+- Os próximos 20% gastam entre 635,4 e 1174,00 um, enquanto os últimos 20% dos clientes gastam menos de 55,00 um no seu consumo médio.
+
+# RFM score
+
+```{r}
+rfm_data <- customers_RFM
+
+rfm_data <-
+    rfm_data %>%
+    mutate(
+        R = ntile(desc(Recency), 5),
+        F = ntile(Frequency, 5),
+        M = ntile(Monetary, 5)
+    )
+
+rfm_data$RFM <- rfm_data$R * 100 + rfm_data$F * 10 + rfm_data$M
+
+rfm_data %>% 
+  head(10) %>% 
+      formattable::formattable()
+```
+
+Observe que clientes com pontuação RFM alta apresentam valores baixos para a variável Recência e altos para as variáveis Frequência e Monetário, por exemplo ID = 25, enquanto clientes com pontuação RFM baixa, apresentam valores altos para a variável Recência e altos para Frequência, por exemplo ID = 17. Sendo que, para clientes com valores intermediários de pontuação RFM necessitam de uma análise mais criteriosa. Como será visto abaixo.
+
+# Segmentação de Clientes
+
+```{r}
+rfm_data$segment <- NA
+
+rfm_data$segment[which(rfm_data$RFM == 111)] <- 'Lost'
+rfm_data$segment[which(rfm_data$RFM > 111)] <- 'Hibernating'
+
+rfm_data$segment[which(rfm_data$RFM >= 222)] <- 'About to sleep'
+
+rfm_data$segment[which(rfm_data$RFM >= 333)] <- 'Potential loyalist'
+
+rfm_data$segment[which(rfm_data$RFM >= 444)] <- 'Champion'
+
+
+# 2nd round
+rfm_data$segment[which(rfm_data$segment == 'Potential loyalist' &
+                           (rfm_data$F >= 4))] <- 'Loyal customer'
+
+rfm_data$segment[which(rfm_data$segment == 'About to sleep' &
+                           (rfm_data$M >= 4))] <-'Needing attention'
+
+rfm_data$segment[which(rfm_data$segment == 'Hibernating' &
+                           (rfm_data$F >= 4 & rfm_data$M >= 4))] <-'Can not lose them'
+
+rfm_data[, -c(5, 6,7)] %>% 
+    head(10) %>% 
+    formattable::formattable()
+```
+
+# Distribuição de clientes por segmento
+
+```{r}
+rfm_data$segment <-
+    factor(
+        x = rfm_data$segment,
+        levels = c(
+            'Lost',
+            'Hibernating',
+            'Can not lose them',
+            'About to sleep',
+            'Needing attention',
+            'New Customer',
+            'Potential loyalist',
+            'Loyal customer',
+            'Champion'
+        )
+    )
+
+
+# Tabela de frequência
+freqTable <-
+    rfm_data %>%
+    # group_by(group) %>%
+    count(segment) %>%
+    # arrange(desc(n)) %>%
+    rename(Segment = segment, Count = n)
+
+freqTable %>% 
+      formattable::formattable()
+
+
+# ou agrupado
+cust_aggr_dat <-
+    aggregate(x = rfm_data[, 2:4],
+              by = list(rfm_data$segment),
+              mean)
+
+
+cust_aggr_dat %>% 
+      formattable::formattable()
+```
+
+Os resultados mostram que:
+
+- Clientes campeões (598), considerados os clientes mais valiosos gastam em média 743,00 u.m, realizaram compras mais de 17 vezes e a última compra foi em média há 14 dias;
+- Enquanto o caso Perdido é o pior caso de 88 dias sem efetuar compra;
+- O destaque vai para o segmento que precisa de atenção, pois possui um consumo elevado, porém a última atividade foi há mais de 2 meses.
+
+# Visualização de dados
+
+```{r}
+# mapa de árvore
+hctreemap2(
+    data = freqTable,
+    group_vars = "Segment",
+    size_var = "Count",
+    color_var = "Count"
+    )
+
+# gráfico de barras
+highchart() %>%
+    hc_add_series(
+        data = freqTable,
+        type = 'column',
+        hcaes(x = Segment, y = Count),
+        dataLabels = list(align = "center", enabled = TRUE,
+                          style = list(
+                                      fontWeight = "bold",
+                                      color = "#f7a35c",
+                                      textOutline = NULL
+                                      )
+                          ),
+        name = 'Segments'
+    ) %>%
+    hc_xAxis(categories = unique(freqTable$Segment)) %>%
+    hc_yAxis(title = list(text = "Clients"))
+```
+
+Os clientes do segmento Campeões são considerados os mais valiosos e Prestes a dormir e Precisando de atenção, precisam de atenção especial para resgatá-los.
+
+```{r,  include=FALSE}
+# Base de dados para classificação
+setwd("C:/Users/Administrador/Desktop/Customer_Segmentation") # change
+dados <- read.csv(file = 'ml_project1_data.csv')
+
+# Removendo variáveis
+dados$Z_CostContact = NULL
+dados$Z_Revenue = NULL
+dados$Dt_Customer = NULL
+
+# Removendo dados faltantes
+dados <- dados[!is.na(dados$Income),]
+
+summary(dados)
+str(dados)
+```
+
+
+```{r, include=FALSE}
+# Transformando atributos categóricos, para poder usar o algoritmo de aprendizado de máquina
+table(dados$Education)
+unique(dados$Education)
+dados$Education <- factor(dados$Education, levels = c('2n Cycle','Basic', 'Graduation', 'Master', 'PhD'), labels = c(1,2,3,4,5))
+dados[is.na(dados$Education)]
+
+
+table(dados$Marital_Status)
+unique(dados$Marital_Status)
+dados$Marital_Status <- factor(dados$Marital_Status, levels = c('Single','Together', 'Married', 'Divorced', 'Widow', 'Alone', 'Absurd', 'YOLO'), 
+                               labels = c(1,2,3,4,5,6,7,8))
+dados[is.na(dados$Marital_Status)]
+
+# Transformando a variável de interesse em fator
+dados$Response <- as.factor(as.numeric(dados$Response))
+```
+
+
+```{r, include=FALSE}
+# Escalonando atributos numéricos
+dados [ , 2] = scale(dados [ , 2])
+dados [ , 5:25] = scale(dados[ , 5:25])
+```
+
+```{r, include=FALSE}
+# treino e teste
+set.seed(1)
+# 75% porque a base de dados não é tão grande
+divisao = sample.split(dados$Response, SplitRatio = 0.75)
+
+base_treinamento = subset(dados[-1], divisao == TRUE) 
+base_teste = subset(dados[-1], divisao == FALSE) 
+```
+
+# Aplicando o algorítmo Naive Bayes
+
+```{r, include=FALSE}
+classificador = naiveBayes(x = base_treinamento[-24], y = base_treinamento$Response)
+predictions = predict(classificador, newdata = base_teste[-24])
+```
+
+Escolhi o algoritmo Naive Bayes, pois desconsidera correlações entre variáveis, tratando cada variável de forma independente. Este algoritmo também é mais rápido de implementar do que por exemplo um algoritmo SVM e além de não necessitar de muitos dados para fazer a classificação.
+
+# Matriz confusão
+
+```{r}
+matriz_confusao = table(base_teste[, 25], predictions)
+
+confusionMatrix(matriz_confusao)
+```
+
+Analisando a matriz de confusão, na classe 0 (cliente não comprou a oferta) o algoritmo classificou corretamente 449 observações e incorretamente 22 observações, na classe 1 (cliente comprou a oferta) o algoritmo classificou corretamente 67 observações e incorretamente 16 observações.
+
+A precisão do modelo foi de 93,14%.
+
+# Predições
+
+```{r, include=FALSE}
+dados$predictions <- NULL
+dados$predictions <- predictions
+```
+
+```{r}
+dados[, -c(2:25)] %>% 
+    head(28) %>% 
+   pander()
+```
+
+Dos primeiros 30 IDs (clientes), 24 foram classificados corretamente e 6 incorretamente.
