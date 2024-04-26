@@ -6,7 +6,7 @@ nivel_bancarizacao <- read_excel("nivel_bancarizacao.xls",
 teledensidade_estad <-nivel_bancarizacao$POS_PAGOS/nivel_bancarizacao$POPULACAO
 round(teledensidade_estad, digits = 4)
 
-# municipal population adjustment coefficient
+# coeficiente de ajustamento populacional municipal
 CP <- ifelse(nivel_bancarizacao$POPULACAO < 5000, 5,
              ifelse(nivel_bancarizacao$POPULACAO > 5000 & nivel_bancarizacao$POPULACAO <20000, 10,
                     ifelse(nivel_bancarizacao$POPULACAO > 20000 & nivel_bancarizacao$POPULACAO <100000, 15,
