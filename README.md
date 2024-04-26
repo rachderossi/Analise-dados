@@ -21,7 +21,7 @@ O banco de dados final deve conter:
 - Nome da cidade
 - Estado
 - População
-- Nível de bancos
+- Nível de bancarização
 - Clientes convertidos
 
 ## Programas de TV e filmes listados na Netflix
