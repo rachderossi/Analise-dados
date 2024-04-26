@@ -288,7 +288,7 @@ data_analysis_GWLR <- data_analysis_GWLR %>%
 data_analysis_GWLR["latitude"] <- lat_long_POA_sample1$latitude
 data_analysis_GWLR["longitude"] <- lat_long_POA_sample1$longitude
 
-#removendo linhas que não foram encontradas latitudes e/ou longitudes
+# removendo linhas que não foram encontradas latitudes e/ou longitudes
 data_analysis_GWLR <- data_analysis_GWLR[!is.na(data_analysis_GWLR$latitude),]
 ```
 
