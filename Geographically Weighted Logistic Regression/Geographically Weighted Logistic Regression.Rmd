@@ -192,7 +192,7 @@ data_test <- data_test %>%
 data_test["latitude"] <- lat_long_POA_sample0$latitude
 data_test["longitude"] <- lat_long_POA_sample0$longitude
 
-#removendo linhas que não foram encontradas latitudes e/ou longitudes
+# removendo linhas que não foram encontradas latitudes e/ou longitudes
 data_test <- data_test[!is.na(data_test$latitude),]
 
 # matriz de confusão
