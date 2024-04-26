@@ -34,4 +34,4 @@ Confira o arquivo “barplot_shiny” com as etapas para criar seu próprio grá
 Modelo classificador para prever se os clientes de uma rede hoteleira honrarão ou cancelarão a reserva realizada.
 
 ## Como criar um gráfico percentual com ggplot2
-Confira o arquivo "gráfico percentual" com os passos para criar seu próprio gráfico percentual em R!
+Confira o arquivo "grafico_percentual" com os passos para criar seu próprio gráfico percentual em R!
