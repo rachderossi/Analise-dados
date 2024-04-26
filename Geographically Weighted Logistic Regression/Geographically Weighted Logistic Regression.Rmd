@@ -326,7 +326,7 @@ data_test_GWLR <- data_test_GWLR[!is.na(data_test_GWLR$latitude),]
 
 
 ```{r}
-#calculando a distância entre os pontos
+# calculando a distância entre os pontos
 RLGP.spdf <- SpatialPointsDataFrame(data_analysis_GWLR[, 65:66], data_analysis_GWLR)
 DM <- gw.dist(dp.locat = coordinates(RLGP.spdf))
 
@@ -346,5 +346,5 @@ mod2 <- ggwr.basic(logistic_reg$formula, RLGP.spdf, bw = bw.ggwr2, family ="bino
 mod1$GW.diagnostic 
 mod2$GW.diagnostic 
 
-# Levando em consideração os valores de AIC dos modelos, o modelo 2 (Função de ponderação gaussiana adaptativa) foi o melhor
+# Levando em consideração os valores de AIC dos modelos, o modelo 2 (Função de ponderação gaussiana adaptativa) foi o melhor.
 ```
