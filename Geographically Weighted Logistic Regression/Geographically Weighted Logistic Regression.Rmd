@@ -46,7 +46,7 @@ library(spgwr)
 ```
 
 ```{r}
-# base de dados
+# banco de dados
 data <- read_sav("dados_agafarma.sav")
 ```
 
@@ -95,7 +95,7 @@ lat_long_POA_sample1 <- as.data.frame(lat_long_POA)
    #dplyr::select(sample, cep_res, RES2POS)  %>% 
          #filter(sample == 0)
 
-# standardizing the zip code to run in the busca_multi function
+# padronizando o CEP para rodar na função busca_multi
 # <- gsub("-", "", data_cep_sample0$cep_res)
 
 # cep <- as.data.frame(cep)
@@ -104,18 +104,18 @@ lat_long_POA_sample1 <- as.data.frame(lat_long_POA)
 
 # writexl::write_xlsx(cep_convert, "C:/Users/RaquelRossi/Downloads/cep1.xls")
 
-# database converted to latitude-longitude
-lat_long_POA2 <- read_excel("lat_long_POA2.xlsx") #  from 541 obs I found latitudes and longitudes of 515 obs 
+# banco de dados convertido para latitude-longitude
+lat_long_POA2 <- read_excel("lat_long_POA2.xlsx") #  de 541 obs encontrei latitudes e longitudes de 515 obs 
 
 lat_long_POA_sample0 <- as.data.frame(lat_long_POA2)
 ```
 
------------------------------------------------------------------- Logistic Regression -------------------------------------------------------------------
+------------------------------------------------------------------ Regressão Logística -------------------------------------------------------------------
 
 ```{r}
-# first all dummies except commercial zip codes were selected which gives a total of 61 dummies
+# primeiro foram selecionados todas as variáveis, exceto códigos postais comerciais, o que dá um total de 61 variáveis
 
-# filtering the datebase only for sample = 1 (train sample)
+# filtrando a base de dados apenas para ampstra = 1 (treinar amostra)
 data_analysis <- data %>%
    dplyr::select(amostra, tp60_atu, DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
          DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
@@ -141,10 +141,10 @@ data_analysis <- data_analysis %>%
 data_analysis["latitude"] <- lat_long_POA_sample1$latitude
 data_analysis["longitude"] <- lat_long_POA_sample1$longitude
 
-# removing lines that have not been found latitudes and / or longitudes
+#removendo linhas que não foram encontradas latitudes e/ou longitudes
 data_analysis <- data_analysis[!is.na(data_analysis$latitude),]
 
-# selection of variables - stepwise method (incorporates forward and backward)
+# seleção de variáveis - método stepwise (forward e backward)
 mod <- glm(tp60_atu ~ DIDAD1+ DIDAD2+ DIDAD3+ DIDAD4+ DIDAD5+ DIDAD6+ DIDAD7+ DIDAD8+ DSEXOF+
          DSEXOM+ DPRIM+ DSEC+ DSUP+ DCASADO+ DCONCUB+ DDIVOR+ DOUTR+ DSEPARA+ DSOLTE+ 
          DVIUVO+ DTSERV1+ DTSERV2+ DTSERV3+ DTSERV4+  DTSERV5+  DTSERV6+  DTSERV7+ DTSERV8+
@@ -159,14 +159,14 @@ stepwise <- step(mod, direction = "both")
 mod_stepwise <- glm(stepwise$formula, family = "binomial", data = data_analysis)
 
 
-# model with the variables that have significance 5%
+#modelo com as variáveis que possuem significância 5%
 logistic_reg <- glm(tp60_atu ~ DIDAD1 + DIDAD2 + DIDAD7 + DIDAD8 + DSEXOF + DPRIM + DCASADO + DTSERV2 + DTSERV8+  DTSERV9 + DOCUP_AS + DOCUP_AU + DRES_ALU + DRES_OUT + DGCEPRE1 + DGCEPRE2 + DGCEPRE3 + DCIDNA2 + DCIDNA7, family = "binomial", data = data_analysis)
 
 summary(logistic_reg)
 ```
 
 ```{r}
-# database for test sample - Logistic Regression
+# banco de dados para amostra de teste - Regressão Logística
 data_test <- data %>%
    dplyr::select(amostra, tp60_atu, DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
          DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
@@ -192,10 +192,10 @@ data_test <- data_test %>%
 data_test["latitude"] <- lat_long_POA_sample0$latitude
 data_test["longitude"] <- lat_long_POA_sample0$longitude
 
-# removing lines that have not been found latitudes and / or longitudes
+#removendo linhas que não foram encontradas latitudes e/ou longitudes
 data_test <- data_test[!is.na(data_test$latitude),]
 
-# confusion matrix
+# matriz de confusão
 predict <- predict(logistic_reg, type = 'response', newdata = data_test[-(62:64)])
 pred <- prediction(as.numeric(predict), as.numeric(data_test$tp60_atu))
 
@@ -220,38 +220,37 @@ AIC(logistic_reg)
 ```
 
 ```{r}
-# KS test
+# teste KS
 
-# test sample - Logistic Regression
+# amostra de teste - Regressão Logística
 perf <- performance(pred,"tpr","fpr")
 
 ks <- max(attr(perf, "y.values")[[1]] - (attr(perf, "x.values")[[1]]))
 
-# train sample - Logistic Regression
+# amostra de treino - Regressão Logística
 perf2 <- performance(pred2,"tpr","fpr")
 
 ks2 <- max(attr(perf2, "y.values")[[1]] - (attr(perf2, "x.values")[[1]]))
 ```
 
 ```{r}
-# ROC curve - Logistic Regression
+# Curva ROC – Regressão Logística
 
-# test sample
+# amostra de teste
 roc <- roc(data_test$tp60_atu, predict)
 auc <- round(auc(data_test$tp60_atu, predict),4)
 
-# ROC plot 
+# ROC gráfico 
 ggroc(roc, colour = 'steelblue', size = 2) +
   ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')')) +
   labs(x = "Specificity", y = "Sensitivity") 
 
-# train sample
+# amostra de treino
 roc2 <- roc(data_analysis$tp60_atu, predict2)
 auc2 <- round(auc(data_analysis$tp60_atu, predict2),4)
 ```
 
 ```{r}
-# indicators table -  Logistic Regression
 table_log_reg<- data.frame(Measures= c("AUC", "KS"), 
                     Train = c(auc2*(100), ks2*(100)), 
                     Test = c(auc*(100), ks*(100)),
@@ -260,7 +259,7 @@ table_log_reg<- data.frame(Measures= c("AUC", "KS"),
 table_log_reg
 ```
 
-------------------------------------------------------- Geographically Weighted Logistic Regression ---------------------------------------------------
+------------------------------------------------------- Regressão Logística Geograficamente Ponderada ---------------------------------------------------
 
 ```{r}
 data_analysis_GWLR <- data %>%
@@ -289,12 +288,12 @@ data_analysis_GWLR <- data_analysis_GWLR %>%
 data_analysis_GWLR["latitude"] <- lat_long_POA_sample1$latitude
 data_analysis_GWLR["longitude"] <- lat_long_POA_sample1$longitude
 
-# removing lines that have not been found latitudes and / or longitudes
+#removendo linhas que não foram encontradas latitudes e/ou longitudes
 data_analysis_GWLR <- data_analysis_GWLR[!is.na(data_analysis_GWLR$latitude),]
 ```
 
 ```{r}
-#database for test sample -  Geographically Weighted Logistic Regression
+# banco de dados para amostra de teste - Regressão logística geograficamente ponderada
 data_test_GWLR <- data %>%
    dplyr::select(amostra, tp60_atu, DIDAD1, DIDAD2, DIDAD3, DIDAD4, DIDAD5, DIDAD6, DIDAD7, DIDAD8, DSEXOF,
          DSEXOM, DPRIM, DSEC, DSUP, DCASADO, DCONCUB, DDIVOR, DOUTR, DSEPARA, DSOLTE, 
@@ -321,33 +320,31 @@ data_test_GWLR <- data_test_GWLR %>%
 data_test_GWLR["latitude"] <- lat_long_POA_sample0$latitude
 data_test_GWLR["longitude"] <- lat_long_POA_sample0$longitude
 
-# removing lines that have not been found latitudes and / or longitudes
+#removendo linhas que não foram encontradas latitudes e/ou longitudes
 data_test_GWLR <- data_test_GWLR[!is.na(data_test_GWLR$latitude),]
 ```
 
 
 ```{r}
-# calculating the distance between the points
+#calculando a distância entre os pontos
 RLGP.spdf <- SpatialPointsDataFrame(data_analysis_GWLR[, 65:66], data_analysis_GWLR)
 DM <- gw.dist(dp.locat = coordinates(RLGP.spdf))
 
-# model 1 - Fixed Gaussian weighting function
-
+# modelo 1 - Função de ponderação gaussiana fixa
 bw.ggwr1 <- bw.ggwr(logistic_reg$formula, RLGP.spdf, family ="binomial", approach="AIC", kernel="gaussian", adaptive = FALSE, dMat = DM)
 
 mod1 <- ggwr.basic(logistic_reg$formula, RLGP.spdf, bw = bw.ggwr1, family ="binomial", kernel = "gaussian", adaptive = FALSE, dMat = DM)
 
-# model 2 - Adaptive Gaussian weighting function
+# modelo 2 - Função de ponderação gaussiana adaptativa
 bw.ggwr2 <- bw.ggwr(logistic_reg$formula, RLGP.spdf, family ="binomial", approach="AIC", kernel="gaussian", adaptive = TRUE, dMat = DM)
 
 mod2 <- ggwr.basic(logistic_reg$formula, RLGP.spdf, bw = bw.ggwr2, family ="binomial", kernel = "gaussian", adaptive = TRUE, dMat = DM)
 ```
 
 ```{r}
-# Choosing the best model
-
+# Escolhendo o melhor modelo
 mod1$GW.diagnostic 
 mod2$GW.diagnostic 
 
-# Taking into account the AIC values of the models, model 2 (Adaptive Gaussian weighting function) was the best
+# Levando em consideração os valores de AIC dos modelos, o modelo 2 (Função de ponderação gaussiana adaptativa) foi o melhor
 ```
