@@ -9,21 +9,21 @@ IDHM <- read_excel("IDHM.xlsx")
 library(tidyverse)
 library(magrittr)
 
-# convert to uppercase
+# converte para mai√∫scula
 populacao %<>% 
   mutate_if(is.character, toupper)
 
 IDHM %<>% 
   mutate_if(is.character, toupper)
 
-# function to remove string accents
+# fun√ß√£o para remover acentos de strings
 RemoveAcentos <- function(textoComAcentos) {
   
   if(!is.character(textoComAcentos)){
     on.exit()
   }
   
-  letrasComAcentos <- "·ÈÌÛ˙¡…Õ”⁄˝›‡ËÏÚ˘¿»Ã“Ÿ‚ÍÓÙ˚¬ Œ‘€„ı√’Ò—‰ÎÔˆ¸ƒÀœ÷‹ˇÁ«¥`^~®"
+  letrasComAcentos <- "√°√©√≠√≥√∫√Å√â√ç√ì√ö√Ω√ù√†√®√¨√≤√π√Ä√à√å√í√ô√¢√™√Æ√¥√ª√Ç√ä√é√î√õ√£√µ√É√ï√±√ë√§√´√Ø√∂√º√Ñ√ã√è√ñ√ú√ø√ß√á¬¥`^~¬®"
   
   letrasSemAcentos <- "aeiouAEIOUyYaeiouAEIOUaeiouAEIOUaoAOnNaeiouAEIOUycC     "
   
@@ -36,18 +36,18 @@ RemoveAcentos <- function(textoComAcentos) {
   return(textoSemAcentos)
 }
 
-# drop accents
+# remove acentos
 populacao %<>% 
   mutate_if(is.character, RemoveAcentos)
 
 IDHM %<>% 
   mutate_if(is.character, RemoveAcentos)
 
-# join databases through common municipalities
+# junte bancos de dados atrav√©s de munic√≠pios comuns
 library(dplyr)
 nova_tabela<-inner_join(freq_municipio,populacao,IDHM,by="MUNICIPIO")
 
-# creating banking level
+# criando n√≠vel banc√°rio
 nivel_bancarizacao = (nova_tabela$n)/(nova_tabela$POPULACAO)
 
 round(nivel_bancarizacao, digits = 5)
@@ -59,13 +59,13 @@ nivel_bancarizacao <- data.table(MUNICIPIO = nova_tabela$MUNICIPIO,
                                  BANCARIZACAO = nivel_bancarizacao,
                                  IDHM = IDHM$IDHM) 
 
-# selecting the 1000 most unbanked cities
+# selecionando as 1000 cidades mais desbancarizadas
 tabela_final <- arrange(nivel_bancarizacao,sort(BANCARIZACAO))
 tabela_final[order(tabela_final)]
 
 library(dplyr)
 cidades <- tabela_final[1:1000,]
 
-# transform into excel file
+# arquivo excel
 library(xlsx)
 write.xlsx(cidades, "nivel_bancarizacao.xls") 
