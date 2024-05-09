@@ -42,7 +42,7 @@ dados_agrupados$regiao <- ifelse(dados_agrupados$sigla_uf == 'SP' | dados_agrupa
 dados_agrupados$regiao <- ifelse(dados_agrupados$sigla_uf == 'RS' | dados_agrupados$sigla_uf == 'SC' | dados_agrupados$sigla_uf == 'PR', "Sul", dados_agrupados$regiao)
   
   
-  dados_agrupados$regiao <- ifelse(dados_agrupados$sigla_uf == 'DF' | dados_agrupados$sigla_uf == 'GO' | dados_agrupados$sigla_uf == 'MT' |
+dados_agrupados$regiao <- ifelse(dados_agrupados$sigla_uf == 'DF' | dados_agrupados$sigla_uf == 'GO' | dados_agrupados$sigla_uf == 'MT' |
                                    dados_agrupados$sigla_uf == 'MS', "Centro-Oeste", dados_agrupados$regiao)
   
 # criando data frame com a populacao de cada ano
