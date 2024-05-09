@@ -35,7 +35,7 @@ O conjunto de dados contém características sociodemográficas e firmográficas
 - Posteriormente é feito um modelo de classificação preditiva utilizando o algoritmo Naive Bayes.
 
 ```{r, include=FALSE}
-setwd("C:/Users/Administrador/Desktop/Customer_Segmentation")
+setwd("caminho/para/seu/arquivo/Customer_Segmentation")
 dados <- read.csv(file = 'ml_project1_data.csv')
 
 summary(dados)
