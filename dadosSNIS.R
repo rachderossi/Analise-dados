@@ -8,7 +8,7 @@ set_billing_id("dadosibge")
   
 query <- "SELECT * FROM `basedosdados.br_mdr_snis.municipio_agua_esgoto`"
   
-path <- "/Users/raquelrossi/Downloads/dados_SNIS.csv"
+path <- "caminho/para/seu/arquivo/dados_SNIS.csv"
   
 download(query, path=path)
   
