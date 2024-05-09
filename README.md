@@ -1,7 +1,7 @@
 # Análise de Dados 
 
 ## Análise de dados do Sistema Nacional de Informações sobre Saneamento (SNIS)
-Criação de um gráfico de barras agrupadas que mostra a proporção de população total atendida com esgotamento sanitário, segundo as Grandes Regiões - 2010/2021.
+Criação de um gráfico de barras agrupadas que mostra a proporção de população total atendida com esgotamento sanitário, segundo as Grandes Regiões - 2010/2021. Confira o arquivo "dadosSNIS".
 
 ## Como criar um gráfico de barras com percentual utilizando ggplot2
 Confira o arquivo "grafico_percentual" com os passos para criar seu próprio gráfico de barras com percentual em R!
