@@ -24,7 +24,7 @@ library(tidyr)
 
 
 ```{r}
-netflix <- read_csv("C:/Users/RaquelRossi/Downloads/SQL/netflix_titles.csv")
+netflix <- read_csv("caminho/para/seu/arquivo/netflix_titles.csv")
 ```
 
 
