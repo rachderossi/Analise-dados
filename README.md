@@ -22,3 +22,6 @@ Modelo classificador para prever se os clientes de uma rede hoteleira honrarão 
 O conjunto de dados contém características sociodemográficas e firmográficas de 2.240 clientes que foram contatados. Além disso, contém uma sinalização para os clientes que responderam à campanha, comprando o produto.
 
 Neste projeto o cálculo do RFM é feito para entender como os clientes devem ser classificados. Posteriormente é feito um modelo de classificação preditiva utilizando o algoritmo Naive Bayes.
+
+## Teste Qui-Quadrado
+Aplicaçâo do teste não paramétrico para comparação de proporções.
