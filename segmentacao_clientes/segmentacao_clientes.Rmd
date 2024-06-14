@@ -1,5 +1,5 @@
 ---
-title: iFood - Segmentação de Clientes
+title: Segmentação de Clientes
 author: Raquel Rossi
 date: "`r Sys.Date()`"
 output: rmdformats::readthedown
