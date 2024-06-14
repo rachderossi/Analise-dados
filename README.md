@@ -24,4 +24,4 @@ O conjunto de dados contém características sociodemográficas e firmográficas
 Neste projeto o cálculo do RFM é feito para entender como os clientes devem ser classificados. Posteriormente é feito um modelo de classificação preditiva utilizando o algoritmo Naive Bayes.
 
 ## Teste Qui-Quadrado
-Aplicaçâo do teste não paramétrico para comparação de proporções.
+Aplicação do teste não paramétrico para comparação de proporções.
