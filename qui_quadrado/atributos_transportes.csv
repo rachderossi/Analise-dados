@@ -1,0 +1,387 @@
+medidas_desempenho,medidas_utilizacao,medidas_eficiencia,medidas_desempenho_ambiente,medidas_utilizacao_estrutura,medidas_eficiencia_energia,disponibilidade_pagamento,sim_quanto,disposto_pagar_medidas,sim_disposto_pagar_medidas,disposto_pagar_investimento,sim_disposto_pagar_investimento,idade,sexo,area,tipo_area,educacao
+3,4,3,1,1,1,Não,,Não,,Não,,35,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+2,4,3,3,3,3,Não,,Não,,Não,,48,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,3,4,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,29,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,4,3,1,3,Sim,Mais 20% do que o preço atual,Não,,Sim,Mais 20% do que o preço atual,39,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,21,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,3,3,1,1,1,Não,,Não,,Não,,38,Feminino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,55,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,53,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,29,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,28,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,3,3,3,2,Não,,Não,,Não,,21,Masculino,Porto,Rural,Nível Secundário (12º ano)
+3,3,3,1,1,1,Não,,Não,,Não,,56,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,19,Feminino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,31,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+3,4,4,2,3,4,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,20,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,73,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,75,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,50,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 10% do que o preço atual,21,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,2,1,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,53,Feminino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,1,Não,,Não,,Não,,59,Masculino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,4,4,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,58,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,2,3,Não,,Não,,Não,,38,Feminino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,3,1,Não,,Não,,Não,,47,Feminino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,2,1,1,Não,,Não,,Não,,64,Masculino,Porto,Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,43,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,71,Masculino,Porto,Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,28,Feminino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,2,Não,,Não,,Não,,62,Feminino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,19,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,67,Feminino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,19,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,38,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,3,4,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,18,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,64,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,29,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,2,1,1,Não,,Não,,Não,,35,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,1,1,1,Não,,Não,,Não,,55,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,23,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,2,2,Não,,Não,,Não,,41,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,Não sei,Não sei,Não sei,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,34,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,57,Masculino,Porto,Rural,Nível Secundário (12º ano)
+3,4,3,1,1,1,Não,,Não,,Não,,59,Feminino,Porto,Rural,Nível Secundário (12º ano)
+1,4,1,1,1,1,Não,,Não,,Não,,59,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,55,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,47,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Não,,Não,,Não,,37,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,29,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,66,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,3,3,Não,,Não,,Não,,56,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,57,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,26,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,53,Feminino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,60,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,1,1,Não,,Não,,Não,,57,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,65,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,4,4,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,37,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,50,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+2,3,3,2,2,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,37,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,42,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,1,2,Não,,Não,,Não,,31,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,4,4,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,23,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,41,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,29,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,32,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,3,4,4,4,4,Não,,Não,,Não,,20,Feminino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,62,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,2,Não,,Não,,Não,,47,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,69,Feminino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+3,3,3,3,1,1,Não,,Não,,Não,,70,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,2,1,Não,,Não,,Não,,21,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,25,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,1,1,Não,,Não,,Não,,38,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,26,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,2,2,Não,,Não,,Não,,57,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,22,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,29,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,4,3,2,Não,,Não,,Não,,23,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,65,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,23,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,64,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,41,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,18,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,49,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,18,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,4,4,2,Não,,Não,,Não,,18,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+3,4,4,3,3,2,Sim,Mais 10% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,26,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,56,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,54,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,62,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,3,2,Não,,Não,,Não,,74,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,22,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,1,1,Não,,Não,,Não,,42,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,1,1,Não,,Não,,Não,,68,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,2,2,1,Não,,Não,,Não,,66,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,58,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,4,4,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,40,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,40,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,40,Feminino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,3,3,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,31,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,60,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,43,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,61,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,70,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,2,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,33,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,4,3,3,2,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,55,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,35,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+2,4,3,1,1,2,Não,,Não,,Não,,62,Feminino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+3,3,3,2,2,2,Não,,Não,,Não,,41,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,60,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,2,Não,,Não,,Não,,50,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,3,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,53,Masculino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,35,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,4,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,24,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,64,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,2,2,2,1,Não,,Não,,Não,,36,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+3,3,3,3,1,1,Não,,Não,,Não,,58,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,29,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,4,4,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,26,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,3,4,1,1,1,Não,,Não,,Não,,53,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,25,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,2,Não,,Não,,Não,,25,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,54,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,82,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,2,1,Não,,Não,,Não,,67,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,33,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,37,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,40,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,33,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,41,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,65,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,28,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,53,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,27,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,47,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,1,Não,,Não,,Não,,20,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,22,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,21,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,22,Masculino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,70,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+3,4,3,3,3,3,Não,,Não,,Não,,37,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,3,4,1,1,1,Não,,Não,,Não,,35,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,4,4,Não,,Não,,Não,,54,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,3,2,2,1,Não,,Não,,Não,,31,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+1,1,1,1,1,1,Não,,Não,,Não,,50,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,4,2,2,Não,,Não,,Não,,38,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 30% do que o preço atual,Sim,Mais 30% do que o preço atual,Sim,Mais 30% do que o preço atual,25,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,53,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,50,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,3,2,Não,,Não,,Não,,46,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,3,2,1,1,Não,,Não,,Não,,55,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,2,2,1,Não,,Não,,Não,,18,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,58,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,3,3,2,2,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,49,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,4,4,4,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,40,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,1,1,Não,,Não,,Não,,24,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,45,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,68,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,31,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,4,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,62,Masculino,Porto,Rural,Ciclo intermédio (9º ano)
+3,4,3,1,1,1,Não,,Não,,Não,,84,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,43,Feminino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,3,2,1,1,1,Não,,Não,,Não,,29,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,3,3,Não,,Não,,Não,,51,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,3,3,2,2,Não,,Não,,Não,,61,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,4,4,3,3,3,Não,,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,47,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,4,4,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,32,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,80,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,2,2,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,39,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,3,3,3,3,Não,,Não,,Não,,63,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,60,Feminino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+3,4,3,2,2,2,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,20,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,4,4,4,Não,,Não,,Não,,26,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,85,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,18,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,39,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,21,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,2,2,Não,,Não,,Não,,71,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,59,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,18,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,3,1,1,1,Não,,Não,,Não,,30,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,2,3,Não,,Não,,Não,,45,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,53,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,27,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,4,4,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,24,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,37,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,57,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Não,,Não,,Não,,84,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,1,1,Não,,Não,,Não,,22,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,47,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,66,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,4,4,1,Não,,Não,,Não,,46,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+Não sei,4,Não sei,4,4,4,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,29,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,3,3,2,3,Sim,Mais 10% do que o preço atual,Não,,Sim,Mais 10% do que o preço atual,37,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Não,,Não,,Não,,41,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,2,3,Não,,Não,,Não,,67,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,23,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,78,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,2,2,Não,,Não,,Não,,67,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,2,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,23,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,3,2,Não,,Não,,Não,,39,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,77,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,3,2,2,1,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,47,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,81,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,80,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,27,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,22,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,29,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+3,4,3,3,3,3,Não,,Não,,Não,,28,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,4,4,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,41,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,32,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,50,Masculino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,60,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,24,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,55,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,Não sei,Não sei,Não sei,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,67,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,58,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+3,3,3,2,2,2,Não,,Não,,Não,,28,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,63,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,78,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,2,2,Não,,Não,,Não,,33,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 20% do que o preço atual,58,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,3,3,2,2,2,Não,,Não,,Não,,45,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+2,3,3,2,2,2,Não,,Não,,Não,,18,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,38,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,77,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+3,3,3,2,2,2,Não,,Não,,Não,,70,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,41,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,3,2,1,1,Não,,Não,,Não,,51,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,80,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,50,Feminino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,72,Masculino,Porto,Rural,Nível Secundário (12º ano)
+4,3,4,3,2,2,Não,,Não,,Não,,39,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,Não sei,1,1,1,Não,,Não,,Não,,49,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,76,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+3,3,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,78,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,33,Masculino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,2,Não,,Não,,Não,,20,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,36,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,42,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,43,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,2,2,2,2,Não,,Não,,Não,,35,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,42,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,67,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,62,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,4,2,Sim,Mais 10% do que o preço atual,Não,,Sim,Mais 10% do que o preço atual,37,Masculino,Porto,Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,30,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,38,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+3,3,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,84,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,63,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,32,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,34,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,3,3,1,1,1,Não,,Não,,Não,,50,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,1,1,Não,,Não,,Não,,51,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,1,1,Não,,Não,,Não,,20,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,52,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,37,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,63,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,80,Feminino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,22,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,58,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,55,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,50,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,32,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,36,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Sim,Mais 10% do que o preço atual,Sim,Mais 20% do que o preço atual,Sim,Mais 10% do que o preço atual,56,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,2,3,3,Não,,Não,,Não,,28,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Não,,Não,,Não,,23,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,66,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,49,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,3,2,2,1,Não,,Não,,Não,,37,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,28,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,57,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+3,3,2,2,1,1,Não,,Não,,Não,,37,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,2,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,19,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,36,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+2,2,2,1,1,1,Não,,Não,,Não,,61,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,50,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+3,4,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,45,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,65,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,2,2,Não,,Não,,Não,,21,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,56,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,2,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,55,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,56,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+3,3,3,3,1,1,Não,,Não,,Não,,33,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,2,2,2,Não,,Não,,Não,,46,Feminino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,4,4,3,3,Não,,Não,,Não,,24,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,4,3,2,1,1,Não,,Não,,Não,,23,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,69,Masculino,Porto,Rural,Primeiro ciclo (4º ano)
+4,4,4,2,1,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,18,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,3,1,1,1,Não,,Não,,Não,,32,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,44,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,60,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+3,4,4,3,2,3,Não,,Não,,Não,,40,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,3,4,2,1,1,Não,,Não,,Não,,39,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,36,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,1,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,27,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Não,,Não,,Não,,61,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,60,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,75,Feminino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,40,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,1,Não,,Não,,Não,,66,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,20,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,4,3,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,79,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,48,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,25,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,3,1,1,1,Não,,Não,,Não,,51,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+1,1,1,1,1,1,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,37,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,42,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,68,Masculino,Porto,Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,39,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,1,1,1,Não,,Não,,Não,,37,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,4,4,4,Não,,Não,,Não,,60,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,2,1,1,Não,,Não,,Não,,42,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,2,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,19,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,4,3,4,Não,,Não,,Não,,23,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,3,1,Não,,Sim,Mais 5% do que o preço atual,Não,,25,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,1,1,Não,,Não,,Não,,30,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,68,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,76,Feminino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,2,2,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,52,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,Sim,Mais 50% do que o preço atual,29,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,40,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,2,2,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,20,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,33,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Não,,Não,,Não,,26,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,42,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,51,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,58,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,1,1,Não,,Não,,Não,,32,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Não,,Sim,Mais 5% do que o preço atual,Não,,46,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,87,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Não,,Não,,Não,,65,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,50,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,58,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,61,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,4,3,2,Não,,Não,,Não,,53,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,73,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,55,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,41,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,60,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,2,2,1,Não,,Não,,Não,,44,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Não,,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,23,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 30% do que o preço atual,Sim,Mais 10% do que o preço atual,44,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,2,2,Não,,Não,,Não,,33,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,4,4,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,65,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+2,2,2,2,2,2,Não,,Não,,Não,,38,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,51,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+3,3,3,1,1,1,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,21,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,28,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,4,4,4,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,39,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,4,4,4,Não,,Não,,Não,,21,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,28,Feminino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,48,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,43,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,46,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+3,3,3,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,51,Masculino,Porto,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,4,4,4,Não,,Não,,Não,,28,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Não,,Não,,Não,,35,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+3,3,3,3,3,3,Não,,Não,,Não,,37,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,2,2,3,Não,,Não,,Não,,70,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,72,Masculino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,35,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,35,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,34,Feminino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,1,1,1,Não,,Não,,Não,,74,Feminino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,44,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,22,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,46,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+3,4,4,3,2,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,26,Feminino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,63,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,43,Masculino,Porto,Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,77,Masculino,Porto,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,68,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,3,Não,,Não,,Não,,70,Masculino,Porto,Rural,Primeiro ciclo (4º ano)
+4,4,4,2,2,2,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,37,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 10% do que o preço atual,70,Masculino,Lisboa,Não Rural,Primeiro ciclo (4º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 10% do que o preço atual,Sim,Mais 5% do que o preço atual,38,Feminino,Porto,Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,69,Feminino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,3,2,Não,,Não,,Não,,46,Feminino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,2,2,2,Não,,Não,,Não,,25,Masculino,Lisboa,Não Rural,Nível Secundário (12º ano)
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,51,Masculino,Lisboa,Não Rural,Ciclo intermédio (9º ano)
+4,4,4,3,2,2,Não,,Não,,Não,,49,Masculino,Porto,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+4,4,4,3,3,3,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,Sim,Mais 5% do que o preço atual,65,Masculino,Porto,Não Rural,Nível Secundário (12º ano)
+4,4,4,1,1,1,Não,,Não,,Não,,65,Masculino,Lisboa,Não Rural,"Nível Universitário (Licenciatura, Mestrado/ Doutoramento)"
+3,3,3,3,3,3,Não,,Não,,Não,,39,Masculino,Porto,Rural,Ciclo intermédio (9º ano)
