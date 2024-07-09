@@ -25,3 +25,7 @@ Neste projeto o cálculo do RFM é feito para entender como os clientes devem se
 
 ## Teste Qui-Quadrado
 Aplicação do teste não paramétrico para comparação de proporções entre variáveis categóricas.
+
+## Teste exato de Fisher
+Aplicação do teste não paramétrico para avaliar a significância de uma associação entre duas variáveis categóricas. Sendo uma alternativa ao teste qui-quadrado.
+
