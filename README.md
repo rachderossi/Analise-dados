@@ -12,7 +12,7 @@ Confira o arquivo “barplot_shiny” com as etapas para criar seu próprio grá
 ## Programas de TV e filmes listados na Netflix
 Este conjunto de dados consiste em programas de TV e filmes disponíveis na Netflix em 2019. O conjunto de dados é coletado do Flixable, um mecanismo de pesquisa terceirizado da Netflix.
 
-## Regressão dados em painel
+## Regressão com dados em painel
 Comparação entre a regressão de efeitos fixos e efeitos aleatórios para saber se a descentralização de países favorece a colaboração governamental em contexto de catástrofe natural e comparar essa relação com o número de mortos no período de 1900 a 2023.
 
 ## Regressão Logística Geograficamente Ponderada na Análise de Risco de Crédito
